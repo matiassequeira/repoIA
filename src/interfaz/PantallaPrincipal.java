@@ -5,6 +5,9 @@
  */
 package interfaz;
 
+import java.awt.event.MouseEvent;
+import javax.swing.JButton;
+
 /**
  *
  * @author USUARIO
@@ -14,12 +17,32 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form PantallaPrincipal
      */
+    public JButton botonIniciar;
+    public PanelMapa panelMapa;
     public PantallaPrincipal() {
         //initComponents();
-        add(new PanelMapa());
+        panelMapa =new PanelMapa();       
+        
+        botonIniciar= new JButton();
+        botonIniciar.setText("iniciar");
+        this.getContentPane().add(botonIniciar);
+        botonIniciar.setBounds(30, 270, 73, 23);
+        botonIniciar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonIniciar(evt);
+            }
+                    
+        });
+        
+        this.getContentPane().add(panelMapa);
+        //pack();
         setVisible(true);
         
     }
+    private void jButtonIniciar(MouseEvent evt) {
+        
+         panelMapa.animar(true);
+            }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -30,21 +53,41 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jPanel1 = new javax.swing.JPanel();
+        jButton2 = new javax.swing.JButton();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 400, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 240, Short.MAX_VALUE)
         );
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 400, 240);
+
+        jButton2.setText("jButton2");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(30, 270, 73, 23);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -83,5 +126,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton2;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
