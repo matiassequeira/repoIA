@@ -3,10 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package interfaz;
+package basura;
 
+import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.event.MouseEvent;
 import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.JScrollBar;
+import javax.swing.JScrollPane;
+import javax.swing.border.LineBorder;
 
 /**
  *
@@ -21,22 +27,48 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     public PanelMapa panelMapa;
     public PantallaPrincipal() {
         //initComponents();
-        panelMapa =new PanelMapa();       
-        
+       
+        //getContentPane().setLayout(null);
+	//setBounds(100,100,725,678);
+        //this.getContentPane().add(panelMapa);
         botonIniciar= new JButton();
         botonIniciar.setText("iniciar");
         this.getContentPane().add(botonIniciar);
-        botonIniciar.setBounds(30, 270, 73, 23);
+        botonIniciar.setBounds(0, 0, 30, 30);
         botonIniciar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButtonIniciar(evt);
             }
                     
         });
+        //JScrollBar scroll= new JScrollBar();
+        //scroll.setBounds(380, 0, 20, 300);
+        //scroll.add(panelMapa);
+        //add(scroll);
         
-        this.getContentPane().add(panelMapa);
-        //pack();
+        //JScrollPane jPanelConsolaMapa = new JScrollPane();
+	//	jPanelConsolaMapa.setBounds(170, 0, 549, 4000);
+	//	jPanelConsolaMapa.setLayout(null);
+	//	jPanelConsolaMapa.setBackground(Color.red);
+	//	this.getContentPane().add(jPanelConsolaMapa);
+        
+        
+        panelMapa =new PanelMapa(); 
+        
+		//panelMapa.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		
+		//panelMapa.setLayout(null);
+        JScrollPane deslizador= new JScrollPane();       
+        deslizador.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+        deslizador.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        deslizador.setViewportView(panelMapa);
+        deslizador.setPreferredSize(new Dimension(1200, 600));
+        //deslizador.setBounds(10, 10, 529, 380);
+        this.getContentPane().add(deslizador);
+        
         setVisible(true);
+        //pack();
+        
         
     }
     private void jButtonIniciar(MouseEvent evt) {

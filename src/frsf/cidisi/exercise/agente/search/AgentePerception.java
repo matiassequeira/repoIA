@@ -93,7 +93,7 @@ public class AgentePerception extends Perception {
         if(ascensorFueraServicio)
         	str+="Ascensor fuera de servicio" +'\n';
         if(!energiaElectrica)
-        	str+="No hay energía electrica"+'\n';
+        	str+="No hay energia electrica"+'\n';
         if(!luminosidadBajaNodosAdyacentes.isEmpty()){
         	str+= "Nodos adyacentes sin luz:"+'\n';
         	for(Nodo nodoLuzBaja : luminosidadBajaNodosAdyacentes)

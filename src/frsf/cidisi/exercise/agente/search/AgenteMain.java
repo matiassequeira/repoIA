@@ -2,6 +2,7 @@ package frsf.cidisi.exercise.agente.search;
 
 import frsf.cidisi.faia.exceptions.PrologConnectorException;
 import frsf.cidisi.faia.simulator.SearchBasedAgentSimulator;
+import interfaz.Frame;
 
 public class AgenteMain {
 
@@ -12,7 +13,8 @@ public class AgenteMain {
 
         SearchBasedAgentSimulator simulator =
                 new SearchBasedAgentSimulator(environment, agent);
-        
+        EstadoAgente estadoAgente= (EstadoAgente) agent.getAgentState();
+        new Frame(estadoAgente.getMapa());
         simulator.start();
     }
 
