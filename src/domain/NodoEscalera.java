@@ -6,14 +6,16 @@ public class NodoEscalera extends Nodo {
 		super(ubicacion, descripcion);
 		
 	}
-	Nodo escalera;
+	NodoEscalera escalera;
 
-	public Nodo getEscalera() {
+	public NodoEscalera getEscalera() {
 		return escalera;
 	}
 
-	public void setEscalera(Nodo escalera) {
+       	public void setEscalera(NodoEscalera escalera) {
 		this.escalera = escalera;
+                if(escalera.getEscalera()==null)
+                    escalera.setEscalera(this);
 	}
 
 	public NodoEscalera clone(){
