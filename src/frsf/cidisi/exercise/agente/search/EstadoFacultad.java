@@ -7,6 +7,7 @@ import java.util.List;
 import domain.Nodo;
 import domain.Punto;
 import frsf.cidisi.faia.state.EnvironmentState;
+import interfaz.Frame;
 
 /**
  * This class represents the real world state.
@@ -20,6 +21,15 @@ public class EstadoFacultad extends EnvironmentState {
     private boolean ascensoresFueraServicio;
     private List<Nodo> luminosidad;
     private Nodo destinoAgente;
+    private Frame frame;
+
+    public void setFrame(Frame frame) {
+        this.frame = frame;
+    }
+
+    public Frame getFrame() {
+        return frame;
+    }
 	
     public EstadoFacultad() {
     		 posicionAgente = new Nodo(null, null);

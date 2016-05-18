@@ -7,6 +7,7 @@ import domain.Nodo;
 import frsf.cidisi.faia.agent.Agent;
 import frsf.cidisi.faia.agent.Perception;
 import frsf.cidisi.faia.environment.Environment;
+import interfaz.Frame;
 
 public class AgentePerception extends Perception {
 
@@ -21,6 +22,16 @@ public class AgentePerception extends Perception {
 	private List<Nodo> luminosidadBajaNodosAdyacentes;
 	private Nodo destino;
 	private List<Nodo> nodosAdyacentesConObstaculos;
+        private Frame frame;
+
+    public void setFrame(Frame frame) {
+        this.frame = frame;
+        this.graficarAgente();
+    }
+
+    public Frame getFrame() {
+        return frame;
+    }
 	
  
 
@@ -160,6 +171,8 @@ public class AgentePerception extends Perception {
 		this.destino = destino;
 	}
 
-	
+	public void graficarAgente(){
+            frame.setPerception(this);
+        }
    
 }
