@@ -8,6 +8,7 @@ package interfaz;
 import domain.Nodo;
 import domain.Punto;
 import excepciones.CoordenadasSinNodoException;
+import frsf.cidisi.exercise.agente.search.AgenteMain;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -28,11 +29,13 @@ public class PanelMapa extends JPanel{
     public  final ImagenFondo image;
     public JButton botonDisminuir;
     public JButton botonAumentar;
+    public AgenteMain agenteMain;
     
    
-    public PanelMapa(Map mapa, ImagenFondo imagen){
+    public PanelMapa(Map mapa, ImagenFondo imagen,AgenteMain agenteMain){
         setLayout(null);
         image=imagen;
+        this.agenteMain = agenteMain;
         //image= new ImagenFondo(mapa);
         ScrollPanelMapa scrollPanelMap= new ScrollPanelMapa(image);
         
@@ -109,7 +112,21 @@ public class PanelMapa extends JPanel{
             }
         });
        
+        
+        JButton botonIniciar= new JButton();
+        botonIniciar.setText("Iniciar");
+        add(botonIniciar);
+        botonIniciar.setBounds(10, 480, 80, 35);
+        botonIniciar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonIniciar(evt);
+            }
+
+            
+        });
         add(scrollPanelMap);
+        
+        
 
             
     }
@@ -122,7 +139,9 @@ public class PanelMapa extends JPanel{
       private void jButtonPisoClicked(MouseEvent evt, int piso) {
          image.setPiso(piso);
       }
-      
+      private void jButtonIniciar(MouseEvent evt) {
+          agenteMain.simulatorStart();
+      }
      
 
 }

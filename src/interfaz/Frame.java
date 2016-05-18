@@ -7,6 +7,7 @@ package interfaz;
 
 import domain.Nodo;
 import domain.Punto;
+import frsf.cidisi.exercise.agente.search.AgenteMain;
 import frsf.cidisi.exercise.agente.search.AgentePerception;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -27,12 +28,12 @@ public class Frame extends JFrame{
     public PanelSetearDatos panelDatos;
     public PanelMapa panelMapa;
     public ImagenFondo imagen; 
-    public Frame(Map<Punto,Nodo> mapa){
+    public Frame(Map<Punto,Nodo> mapa, AgenteMain agenteMain){
         setBounds(0, 0, 1200, 600);
         getContentPane().setLayout(null);
         imagen= new ImagenFondo(mapa);
-        panelMapa = new PanelMapa(mapa,imagen);
-        panelMapa.setBounds(400,0,700,500);
+        panelMapa = new PanelMapa(mapa,imagen,agenteMain);
+        panelMapa.setBounds(400,0,700,600);
         panelMapa.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {

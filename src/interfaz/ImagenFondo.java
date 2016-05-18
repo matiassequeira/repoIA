@@ -15,6 +15,7 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -52,9 +53,10 @@ public class ImagenFondo extends JComponent{
     public int piso,mouseX,mouseY;
     Dimension dimension;
     public Nodo nodoClickeado;
-     
+    ScrollPanelMapa scroll; 
    // public Image img;
     public ImagenFondo(Map<Punto,Nodo> mapa){
+        
         listaRecorrido= new ArrayList();
          nodoClickeado=null;
          this.mapa =mapa;
@@ -290,8 +292,16 @@ public class ImagenFondo extends JComponent{
         agente.setPosicionY(y);
         listaRecorrido.add((double)x);
         listaRecorrido.add((double)y);
-        repaint();
         
+        
+        double xAg= dimension.width*(agente.getPosicionX()/tamanioMapaX);
+        double yAg =dimension.height*(agente.getPosicionY()/tamanioMapaY);
+        
+        
+        //Point p= new Point((int)xAg, (int)yAg);
+        Point p= new Point((int)xAg-300, dimension.height-(int)yAg-200);
+        scroll.getViewport().setViewPosition(p);
+        repaint();
         
     }
      public void animar(boolean turnOnOff) {
@@ -301,4 +311,11 @@ public class ImagenFondo extends JComponent{
             //timer.stop();
         }
     }
+     public void instanciarListaRecorrido(){
+         listaRecorrido= new ArrayList();
+         repaint();
+     }
+     public void setScroll(ScrollPanelMapa scrollPanel){
+         scroll=scrollPanel;
+     }
 }

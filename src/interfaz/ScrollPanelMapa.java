@@ -22,7 +22,7 @@ import javax.swing.event.ChangeEvent;
  *
  * @author USUARIO
  */
-public class ScrollPanelMapa extends JScrollPane implements MouseMotionListener, MouseWheelListener{
+public class ScrollPanelMapa extends JScrollPane{
     final ImagenFondo imagenFondo;
     
     public double zoom;
@@ -33,64 +33,13 @@ public class ScrollPanelMapa extends JScrollPane implements MouseMotionListener,
        
         
         imagenFondo= img;
+        imagenFondo.setScroll(this);
         
         
         
-        addMouseMotionListener(this);
-        addMouseWheelListener(this);
     }
     
-        @Override
-    public void mouseDragged(MouseEvent e) {
-        
-    }
-
-    @Override
-    public void mouseMoved(MouseEvent e) {
-        /*
-        if(imagenFondoZoomX>-(imagenFondo.getIconWidth()-this.getWidth())){
-            if(e.getX()>(this.getWidth()-50)){
-                imagenFondoZoomX-=10;
-                repaint();
-            }
-        }
-        if(imagenFondoZoomX<0){
-            if(e.getX()>0 && e.getX()<50){
-                imagenFondoZoomX+=10;
-                repaint();
-            }
-        }
-        if(imagenFondoZoomY<0){
-            if(e.getY()>0 && e.getY()<50){
-                imagenFondoZoomY+=10;
-                repaint();
-            }
-        }
-        if(imagenFondoZoomY>-(imagenFondo.getIconHeight()-this.getHeight())){
-            if(e.getY()>(this.getHeight()-50)){
-                imagenFondoZoomY-=10;
-                //imagenFondoY+=10;
-                repaint();
-            }
-        }*/
-    }
-
-    @Override
-    public void mouseWheelMoved(MouseWheelEvent e) {
-        
-        if(e.getWheelRotation()<0){
-            //zoom+=-e.getUnitsToScroll()*0.3;
-            zoom-=0.3;
-        }
-        else{
-            if(zoom>1){
-                //zoom-=e.getUnitsToScroll()*0.3;
-                zoom+=0.3;
-            }
-        }
-        //zoom=e.getUnitsToScroll()*0.3;
-        imagenFondo.setZoom(zoom);
-    }
+      
        
     
 }

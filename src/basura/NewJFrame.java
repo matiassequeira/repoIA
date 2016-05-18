@@ -27,13 +27,13 @@ public class NewJFrame extends javax.swing.JFrame {
         init();
     }
     public void init(){
-        JButton botonTercerPiso= new JButton();
-        botonTercerPiso.setText("3");
-        add(botonTercerPiso);
-        botonTercerPiso.setBounds(240, 420, 50, 35);
-        botonTercerPiso.addMouseListener(new java.awt.event.MouseAdapter() {
+        JButton botonIniciar= new JButton();
+        botonIniciar.setText("Iniciar");
+        add(botonIniciar);
+        botonIniciar.setBounds(240, 420, 50, 35);
+        botonIniciar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButtonPisoClicked(evt,3);
+                jButtonIniciar(evt);
             }
         });
 
