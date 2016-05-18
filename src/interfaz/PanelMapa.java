@@ -8,11 +8,17 @@ package interfaz;
 import domain.Nodo;
 import domain.Punto;
 import excepciones.CoordenadasSinNodoException;
+import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 import java.util.Map;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.Timer;
 
 /**
  *
@@ -22,10 +28,11 @@ public class PanelMapa extends JPanel{
     public  final ImagenFondo image;
     public JButton botonDisminuir;
     public JButton botonAumentar;
+    
    
-    public PanelMapa(Map mapa){
+    public PanelMapa(Map mapa, ImagenFondo imagen){
         setLayout(null);
-        
+        image=imagen;
         //image= new ImagenFondo(mapa);
         ScrollPanelMapa scrollPanelMap= new ScrollPanelMapa(image);
         
@@ -115,6 +122,7 @@ public class PanelMapa extends JPanel{
       private void jButtonPisoClicked(MouseEvent evt, int piso) {
          image.setPiso(piso);
       }
+      
      
 
 }

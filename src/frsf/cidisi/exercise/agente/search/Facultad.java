@@ -28,7 +28,7 @@ public class Facultad extends Environment {
     public  AgentePerception getPercept() {
         // Create a new perception to return
          AgentePerception perception = new AgentePerception();
-		
+	
          perception.setPosicionAgente(this.getEnvironmentState().getPosicionAgente());
          perception.setAscensorFueraServicio(this.getEnvironmentState().getAscensoresFueraServicio());
          perception.setEnergiaElectrica(this.getEnvironmentState().getEnergiaElectrica());
@@ -61,6 +61,8 @@ public class Facultad extends Environment {
  					nodosAdyacentesConObstaculos.add(nodoConObstaculo);
          }
         perception.setNodosAdyacentesConObstaculos(nodosAdyacentesConObstaculos);
+        
+        perception.setFrame(this.getEnvironmentState().getFrame());
         // Return the perception
         return perception;
     }
