@@ -44,8 +44,8 @@ public class UsarEscalera extends SearchAction {
         	
         	NodoEscalera nodoEscalera = (NodoEscalera) agState.getPosicion();
         	if(nodoEscalera.getEscalera().hayLuz() && !nodoEscalera.getEscalera().hayObstaculo()){
-//        		agState.setEnergiaDisponible(agState.getEnergiaDisponible()-
-//      				   nodoEscalera.calcularDistanciaEntreNodos(nodoEscalera.getEscalera()));
+        		agState.setEnergiaDisponibleConOperadorUsarEscalera(agState.getEnergiaDisponible()-
+     				   nodoEscalera.calcularDistanciaEntreNodos(nodoEscalera.getEscalera()));
         		agState.setPosicion(nodoEscalera.getEscalera());
         		environmentState.setPosicionAgente(agState.getPosicion());
         		return environmentState;

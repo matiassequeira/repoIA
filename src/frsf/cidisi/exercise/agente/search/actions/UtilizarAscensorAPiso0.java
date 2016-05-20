@@ -49,8 +49,8 @@ public class UtilizarAscensorAPiso0 extends SearchAction {
         	
         	if(nodoAscensor.getAscensor0()!=null){
 	         	if(!nodoAscensor.isFueraDeServicio() && agState.hayEnergiaElectrica()){
-//	         		agState.setEnergiaDisponible(agState.getEnergiaDisponible()-
-//		      				   nodoAscensor.calcularDistanciaEntreNodos(nodoAscensor.getAscensor0()));
+	         		agState.setEnergiaDisponible(agState.getEnergiaDisponible()-
+		      				   nodoAscensor.calcularDistanciaEntreNodos(nodoAscensor.getAscensor0()));
 	         		agState.setPosicion(nodoAscensor.getAscensor0());
 	         		environmentState.setPosicionAgente(agState.getPosicion());
 	         		return environmentState;

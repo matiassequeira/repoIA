@@ -56,7 +56,4 @@ public class Punto {
 		return true;
 	}
 	
-
-
-	
 }

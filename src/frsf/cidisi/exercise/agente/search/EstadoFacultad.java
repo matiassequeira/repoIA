@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import datos.DatosMapa;
 import domain.Nodo;
 import domain.Punto;
 import frsf.cidisi.faia.state.EnvironmentState;
-import interfaz.Frame;
 
 /**
  * This class represents the real world state.
@@ -21,23 +21,14 @@ public class EstadoFacultad extends EnvironmentState {
     private boolean ascensoresFueraServicio;
     private List<Nodo> luminosidad;
     private Nodo destinoAgente;
-    private Frame frame;
-
-    public void setFrame(Frame frame) {
-        this.frame = frame;
-    }
-
-    public Frame getFrame() {
-        return frame;
-    }
 	
     public EstadoFacultad() {
-    		 posicionAgente = new Nodo(null, null);
-			 listaObstaculos =  new ArrayList<Nodo>();
-			 luminosidad = new ArrayList<Nodo>();
-			 destinoAgente = new Nodo(null, null);
-        
-        this.initState();
+		 posicionAgente = new Nodo(null, null);
+		 listaObstaculos =  new ArrayList<Nodo>();
+		 luminosidad = new ArrayList<Nodo>();
+		 destinoAgente = new Nodo(null, null);
+		 energiaElectrica=true;
+         this.initState();
     }
 
     /**
@@ -46,38 +37,17 @@ public class EstadoFacultad extends EnvironmentState {
     @Override
     public void initState() {
 
-    	Punto puntoAux1;
-    	puntoAux1= new Punto(108,39,0);
-    	Nodo hall = new Nodo(puntoAux1, "hall");
     	
-
-    	Punto puntoAux4;
-    	puntoAux4= new Punto(140,30,0);
-    	Nodo fagdut = new Nodo(puntoAux4, "fagdut");
-    	
-    	Punto puntoAux2 = new Punto(0,2,0);
-    	Nodo biblioteca = new Nodo(puntoAux2, "biblioteca");
-    	
-    	Punto puntoAux3= new Punto(110, 30, 0);
-    	Nodo aula1 = new Nodo(puntoAux3, "aula1");
-    	
-    	
-    	
-    	hall.setSuroeste(biblioteca);
-    	hall.setNoreste(aula1);
-    	hall.setNorte(fagdut);
-    	
-    	aula1.setOeste(fagdut);   
-    	
-    	fagdut.setSuroeste(biblioteca);
       	
-      	posicionAgente=aula1;
-      	destinoAgente=biblioteca;
+      	posicionAgente=DatosMapa.getPosicion();
+      	destinoAgente=DatosMapa.getDestino();
+      	
       	ascensoresFueraServicio=false;
       	energiaElectrica=true;
-     	listaObstaculos=new ArrayList<Nodo>();
+     	
+      	listaObstaculos=DatosMapa.getObstaculos();
       	//listaObstaculos.add(hall);
-      	luminosidad=new ArrayList<Nodo>();
+      	luminosidad=DatosMapa.getNodosSinLuz();
         
     }
 

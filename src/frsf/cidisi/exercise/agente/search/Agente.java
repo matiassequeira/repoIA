@@ -27,7 +27,7 @@ import java.util.Vector;
 
 public class Agente extends SearchBasedAgent {
 	
-	private int searchStrategy=3;
+	private int searchStrategy=4;
 	public  static final int PROFUNDIDAD=1;
 	public  static final int ANCHURA=2;
 	public  static final int COSTO_UNIFORME=3;
@@ -45,11 +45,12 @@ public class Agente extends SearchBasedAgent {
 
         // Create the operators
         Vector<SearchAction> operators = new Vector<SearchAction>();
-        operators.addElement(new UsarEscalera());
+        
         operators.addElement(new UtilizarAscensorAPiso0());	
         operators.addElement(new UtilizarAscensorAPiso1());	
         operators.addElement(new UtilizarAscensorAPiso2());	
         operators.addElement(new UtilizarAscensorAPiso3());	
+        operators.addElement(new UsarEscalera());
         operators.addElement(new IrSur());	
         operators.addElement(new IrEste());	
         operators.addElement(new IrNorte());	

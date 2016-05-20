@@ -43,8 +43,8 @@ public class IrNorte extends SearchAction {
         if (nodoActual.getNorte()!=null){
      	   if(nodoActual.getNorte().hayLuz() && !nodoActual.getNorte().hayObstaculo()){
      		   agState.setPosicion(nodoActual.getNorte());
-//     		   agState.setEnergiaDisponible(agState.getEnergiaDisponible()-
-//     				   nodoActual.calcularDistanciaEntreNodos(nodoActual.getNorte()));
+     		   agState.setEnergiaDisponible(agState.getEnergiaDisponible()-
+     				   nodoActual.calcularDistanciaEntreNodos(nodoActual.getNorte()));
      		   environmentState.setPosicionAgente(agState.getPosicion());
      		   return environmentState;
      	   }

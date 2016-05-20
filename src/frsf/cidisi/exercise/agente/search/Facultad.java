@@ -7,6 +7,7 @@ import domain.Nodo;
 import frsf.cidisi.faia.agent.Action;
 import frsf.cidisi.faia.agent.Perception;
 import frsf.cidisi.faia.environment.Environment;
+import frsf.cidisi.faia.state.AgentState;
 
 public class Facultad extends Environment {
 
@@ -28,10 +29,10 @@ public class Facultad extends Environment {
     public  AgentePerception getPercept() {
         // Create a new perception to return
          AgentePerception perception = new AgentePerception();
-	
-         perception.setPosicionAgente(this.getEnvironmentState().getPosicionAgente());
+		
          perception.setAscensorFueraServicio(this.getEnvironmentState().getAscensoresFueraServicio());
          perception.setEnergiaElectrica(this.getEnvironmentState().getEnergiaElectrica());
+         
          
          Nodo posicionAgente= this.getEnvironmentState().getPosicionAgente();
          List<Nodo> luminosidadBajaNodosAdyacentes= new ArrayList<Nodo>();
@@ -61,9 +62,8 @@ public class Facultad extends Environment {
  					nodosAdyacentesConObstaculos.add(nodoConObstaculo);
          }
         perception.setNodosAdyacentesConObstaculos(nodosAdyacentesConObstaculos);
+
         
-        perception.setFrame(this.getEnvironmentState().getFrame());
-        // Return the perception
         return perception;
     }
 
@@ -73,12 +73,11 @@ public class Facultad extends Environment {
     }
 
     
-    public boolean agentFailed(Action actionReturned) {
+    public boolean agentFailed(AgentState agState) {
 
-        EstadoFacultad envState =
-                this.getEnvironmentState();
-
-        // : Complete Method        
+    	EstadoAgente estAgente= (EstadoAgente) agState;
+        if(estAgente.getEnergiaDisponible()<=0)
+        	return true;
 
         return false;
     }

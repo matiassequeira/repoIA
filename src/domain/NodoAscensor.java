@@ -23,21 +23,37 @@ public class NodoAscensor extends Nodo{
 
 	
 	public NodoAscensor clone(){
-		Punto ubicacion = new Punto(this.ubicacion.getX(), this.ubicacion.getY(), this.ubicacion.getZ());
-		NodoAscensor clon = new NodoAscensor(ubicacion,this.getDescripcion());	
 		
-		clon.setEste(this.getEste());
-		clon.setOeste(this.getOeste());
-		clon.setSur(this.getSur());
-		clon.setNorte(this.getNorte());
-		clon.setNoreste(this.getNoreste());
-		clon.setNoroeste(this.getNoroeste());
-		clon.setSureste(this.getSureste());
-		clon.setSuroeste(this.getSuroeste());
-		clon.setAscensor0(this.getAscensor0());
-		clon.setAscensor1(this.getAscensor1());
-		clon.setAscensor2(this.getAscensor2());
-		clon.setAscensor3(this.getAscensor3());
+		NodoAscensor clon = new NodoAscensor(this.getUbicacion(),this.getDescripcion());	
+		
+		if(this.getEste()!=null)
+			clon.setEste(this.getEste());
+		if(this.getOeste()!=null)
+			clon.setOeste(this.getOeste());
+		if(this.getSur()!=null)
+			clon.setSur(this.getSur());
+		if(this.getNorte()!=null)
+			clon.setNorte(this.getNorte());
+		if(this.getNoreste()!=null)
+			clon.setNoreste(this.getNoreste());
+		if(this.getNoroeste()!=null)
+			clon.setNoroeste(this.getNoroeste());
+		if(this.getSureste()!=null)
+			clon.setSureste(this.getSureste());
+		if(this.getSuroeste()!=null)
+			clon.setSuroeste(this.getSuroeste());
+		
+		clon.hayLuz(hayLuz);
+		clon.hayObstaculo(hayObstaculo);
+		
+		if(this.getAscensor0()!=null)
+			clon.setAscensor0(this.getAscensor0());
+		if(this.getAscensor1()!=null)
+			clon.setAscensor1(this.getAscensor1());
+		if(this.getAscensor2()!=null)
+			clon.setAscensor2(this.getAscensor2());
+		if(this.getAscensor3()!=null)
+			clon.setAscensor3(this.getAscensor3());
 		
 		return clon;
 	}

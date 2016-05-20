@@ -10,6 +10,7 @@ import java.util.Map.Entry;
 
 import sun.net.idn.Punycode;
 
+import datos.DatosMapa;
 import domain.Nodo;
 import domain.NodoEscalera;
 import domain.Punto;
@@ -34,7 +35,7 @@ public class EstadoAgente extends SearchBasedAgentState {
     private boolean hayEnergiaElectrica;
     private Vector<NTree> ramaExpandidaAObjetivo;
     
-    private int searchStrategy=3;
+    private int searchStrategy=4;
 	public  static final int PROFUNDIDAD=1;
 	public  static final int ANCHURA=2;
 	public  static final int COSTO_UNIFORME=3;
@@ -73,11 +74,12 @@ public class EstadoAgente extends SearchBasedAgentState {
         newState.setPosicion(this.getPosicion().clone());
         newState.setDestino(this.getDestino().clone());
         
-        Map<Punto, Nodo> mapaCopia = new HashMap<Punto, Nodo>();
-        for (Map.Entry<Punto, Nodo> elementoMapa : this.getMapa().entrySet()){
-        	mapaCopia.put(elementoMapa.getKey(), elementoMapa.getValue().clone());
-        }
-        newState.setMapa(mapaCopia);
+//        Map<Punto, Nodo> mapaCopia = new HashMap<Punto, Nodo>();
+//        for (Map.Entry<Punto, Nodo> elementoMapa : this.getMapa().entrySet()){
+//        	mapaCopia.put(elementoMapa.getKey(), elementoMapa.getValue().clone());
+//        }
+        newState.setMapa(mapa);
+        newState.setHayEnergiaElectrica(this.hayEnergiaElectrica);
 		
         return newState;
     }
@@ -89,29 +91,29 @@ public class EstadoAgente extends SearchBasedAgentState {
     @Override
     public void updateState(Perception p) {
         AgentePerception percepcion = (AgentePerception) p;
-        
-        switch(searchStrategy){
-    	case(PROFUNDIDAD): 
-    		energiaDisponible= energiaDisponible-posicion.calcularDistanciaEntreNodos(percepcion.getPosicionAgente());
-    		break;
-    	case(ANCHURA):
-    		
-    		break;
-    	case(COSTO_UNIFORME):
-    		if(this.getPosicion() instanceof NodoEscalera && percepcion.getPosicionAgente() instanceof NodoEscalera)
-    			energiaDisponible-= ((NodoEscalera) this.getPosicion()).getCostoUsarEscalera()*10;
-    		else
-    			energiaDisponible-=10;
-    		break;
-    	case(A_ASTERISCO):
-    		energiaDisponible= energiaDisponible-posicion.calcularDistanciaEntreNodos(percepcion.getPosicionAgente());
-    		break;
-    	}
-        
-        
-        
-        this.posicion=mapa.get(percepcion.getPosicionAgente().getUbicacion());
-        //this.destino=percepcion.getDestino();
+//        
+//        switch(searchStrategy){
+//    	case(PROFUNDIDAD): 
+//    		energiaDisponible= energiaDisponible-posicion.calcularDistanciaEntreNodos(percepcion.getPosicionAgente());
+//    		break;
+//    	case(ANCHURA):
+//    		energiaDisponible= energiaDisponible-posicion.calcularDistanciaEntreNodos(percepcion.getPosicionAgente());
+//    		break;
+//    	case(COSTO_UNIFORME):
+//    		if(this.getPosicion() instanceof NodoEscalera && percepcion.getPosicionAgente() instanceof NodoEscalera)
+//    			energiaDisponible-= ((NodoEscalera) this.getPosicion()).getCostoUsarEscalera()*10;
+//    		else
+//    			energiaDisponible-=10;
+//    		break;
+//    	case(A_ASTERISCO):
+//    		energiaDisponible= energiaDisponible-posicion.calcularDistanciaEntreNodos(percepcion.getPosicionAgente());
+//    		
+//    		break;
+//    	}
+//        
+//        
+//        
+//        this.posicion=mapa.get(percepcion.getPosicionAgente().getUbicacion());
         
         
         this.hayEnergiaElectrica=percepcion.isEnergiaElectrica();
@@ -125,7 +127,10 @@ public class EstadoAgente extends SearchBasedAgentState {
         }
         if(!percepcion.getNodosAdyacentesConObstaculos().isEmpty()){
         	for (Nodo nodoConObstaculo : percepcion.getNodosAdyacentesConObstaculos()) {
-				mapa.get(nodoConObstaculo.getUbicacion()).hayObstaculo(true);
+        		Nodo nodoASetearObstaculo=mapa.get(nodoConObstaculo.getUbicacion());
+        		
+				nodoASetearObstaculo.hayObstaculo(true);
+				System.out.println("borrarenestadoagente"+ mapa.get(nodoConObstaculo.getUbicacion()).hayObstaculo());
 			}
         }
         
@@ -137,42 +142,11 @@ public class EstadoAgente extends SearchBasedAgentState {
     @Override
     public void initState() {
      
-    	energiaDisponible= new Double(10000);
-    	
-    	mapa = new HashMap<Punto, Nodo>();
-    
-    	Punto puntoAux1;
-    	puntoAux1= new Punto(108,39,0);
-    	Nodo hall = new Nodo(puntoAux1, "hall");
-
-    	Punto puntoAux4;
-    	puntoAux4= new Punto(104,30,0);
-    	Nodo fagdut = new Nodo(puntoAux4, "fagdut");
-    	
-    	Punto puntoAux2 = new Punto(0,2,0);
-    	Nodo biblioteca = new Nodo(puntoAux2, "biblioteca");
-    	
-    	Punto puntoAux3= new Punto(110, 30, 0);
-    	Nodo aula1 = new Nodo(puntoAux3, "aula1");
-    	
-    	
-    	
-    	hall.setSuroeste(biblioteca);
-    	hall.setNoreste(aula1);
-    	hall.setNorte(fagdut);
-    	
-    	aula1.setOeste(fagdut);   
-    	
-    	fagdut.setSuroeste(biblioteca);
-    	
-    	mapa.put(puntoAux1, hall);
-    	mapa.put(puntoAux2, biblioteca);
-    	mapa.put(puntoAux3, aula1);
-    	mapa.put(puntoAux4, fagdut);
-    	
-      	
-      	posicion=aula1;
-      	destino=biblioteca;
+    	energiaDisponible= new Double(300);
+    	hayEnergiaElectrica=true;
+    	mapa = DatosMapa.cargarDatos();
+      	posicion=DatosMapa.getPosicion();
+      	destino=DatosMapa.getDestino();
     }
 
     /**
@@ -182,6 +156,7 @@ public class EstadoAgente extends SearchBasedAgentState {
     public String toString() {
         String str = "";
 
+        
         str+= "Posicion agente:"+posicion+'\n'
         + "Destino: "+destino.toString()+'\n'
         + "Energia disponible:" +energiaDisponible+'\n';
@@ -274,8 +249,12 @@ public class EstadoAgente extends SearchBasedAgentState {
         return energiaDisponible;
      }
      public void setEnergiaDisponible(Double arg){
-        energiaDisponible = arg;
+    	 if(searchStrategy==COSTO_UNIFORME)
+    		 energiaDisponible-=10;
+    	 else
+    		 energiaDisponible=arg;
      }
+   
      public Map<Punto,Nodo> getMapa(){
         return mapa;
      }
@@ -289,6 +268,14 @@ public class EstadoAgente extends SearchBasedAgentState {
 
 	public Vector<NTree> getRamaExpandidaAObjetivo() {
 		return ramaExpandidaAObjetivo;
+	}
+
+	public void setEnergiaDisponibleConOperadorUsarEscalera(double arg) {
+		// TODO Auto-generated method stub
+		 if(searchStrategy==COSTO_UNIFORME)
+			 energiaDisponible-= ((NodoEscalera) this.getPosicion()).getCostoUsarEscalera()*10;
+    	 else
+    		 energiaDisponible=arg;
 	}
 	
 }

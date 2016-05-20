@@ -43,8 +43,8 @@ public class IrNoreste extends SearchAction {
         if (nodoActual.getNoreste()!=null){
      	   if(nodoActual.getNoreste().hayLuz() && !nodoActual.getNoreste().hayObstaculo()){
      		   agState.setPosicion(nodoActual.getNoreste());
-//     		   agState.setEnergiaDisponible(agState.getEnergiaDisponible()-
-//     				   nodoActual.calcularDistanciaEntreNodos(nodoActual.getNoreste()));
+     		   agState.setEnergiaDisponible(agState.getEnergiaDisponible()-
+     				   nodoActual.calcularDistanciaEntreNodos(nodoActual.getNoreste()));
      		   environmentState.setPosicionAgente(agState.getPosicion());
      		   return environmentState;
      	   }

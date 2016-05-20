@@ -43,8 +43,8 @@ public class IrSur extends SearchAction {
         if (nodoActual.getSur()!=null){
      	   if(nodoActual.getSur().hayLuz() && !nodoActual.getSur().hayObstaculo()){
      		   agState.setPosicion(nodoActual.getSur());
-//     		   agState.setEnergiaDisponible(agState.getEnergiaDisponible()-
-//     				   nodoActual.calcularDistanciaEntreNodos(nodoActual.getSur()));
+     		   agState.setEnergiaDisponible(agState.getEnergiaDisponible()-
+     				   nodoActual.calcularDistanciaEntreNodos(nodoActual.getSur()));
      		   environmentState.setPosicionAgente(agState.getPosicion());
      		   return environmentState;
      	   }

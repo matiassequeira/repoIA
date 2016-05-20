@@ -7,7 +7,6 @@ import domain.Nodo;
 import frsf.cidisi.faia.agent.Agent;
 import frsf.cidisi.faia.agent.Perception;
 import frsf.cidisi.faia.environment.Environment;
-import interfaz.Frame;
 
 public class AgentePerception extends Perception {
 
@@ -22,21 +21,12 @@ public class AgentePerception extends Perception {
 	private List<Nodo> luminosidadBajaNodosAdyacentes;
 	private Nodo destino;
 	private List<Nodo> nodosAdyacentesConObstaculos;
-        private Frame frame;
-
-    public void setFrame(Frame frame) {
-        this.frame = frame;
-        this.graficarAgente();
-    }
-
-    public Frame getFrame() {
-        return frame;
-    }
 	
  
 
     public  AgentePerception() {
     	//: Complete Method
+    	//energiaElectrica=true;
     }
 
     public AgentePerception(Agent agent, Environment environment) {
@@ -104,7 +94,7 @@ public class AgentePerception extends Perception {
         if(ascensorFueraServicio)
         	str+="Ascensor fuera de servicio" +'\n';
         if(!energiaElectrica)
-        	str+="No hay energia electrica"+'\n';
+        	str+="No hay energía electrica"+'\n';
         if(!luminosidadBajaNodosAdyacentes.isEmpty()){
         	str+= "Nodos adyacentes sin luz:"+'\n';
         	for(Nodo nodoLuzBaja : luminosidadBajaNodosAdyacentes)
@@ -171,8 +161,6 @@ public class AgentePerception extends Perception {
 		this.destino = destino;
 	}
 
-	public void graficarAgente(){
-            frame.setPerception(this);
-        }
+	
    
 }

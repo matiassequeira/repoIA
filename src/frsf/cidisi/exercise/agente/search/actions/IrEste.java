@@ -43,8 +43,8 @@ public class IrEste extends SearchAction {
         if (nodoActual.getEste()!=null){
      	   if(nodoActual.getEste().hayLuz() && !nodoActual.getEste().hayObstaculo()){
      		   agState.setPosicion(nodoActual.getEste());
-//     		   agState.setEnergiaDisponible(agState.getEnergiaDisponible()-
-//     				   nodoActual.calcularDistanciaEntreNodos(nodoActual.getEste()));
+     		   agState.setEnergiaDisponible(agState.getEnergiaDisponible()-
+     				   nodoActual.calcularDistanciaEntreNodos(nodoActual.getEste()));
      		   environmentState.setPosicionAgente(agState.getPosicion());
      		   return environmentState;
      	   }
