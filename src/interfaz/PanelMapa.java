@@ -116,7 +116,7 @@ public class PanelMapa extends JPanel{
         JButton botonIniciar= new JButton();
         botonIniciar.setText("Iniciar");
         add(botonIniciar);
-        botonIniciar.setBounds(10, 480, 80, 35);
+        botonIniciar.setBounds(10, 460, 80, 35);
         botonIniciar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButtonIniciar(evt);

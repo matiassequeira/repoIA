@@ -19,6 +19,7 @@ public class PanelSetearDatos extends JPanel{
     JCheckBox jCheckBoxHayObstaculo ;
     JCheckBox jCheckBoxHayLuz ;
     JCheckBox jCheckBoxNodoInicio ;
+    JCheckBox jCheckBoxNodoDestino ;
     JCheckBox jCheckBoxServicioAscensor ;
     JCheckBox jCheckBoxEnergiaElectrica ;
     JTextField textDescripcionNodo;
@@ -31,6 +32,7 @@ public class PanelSetearDatos extends JPanel{
         jCheckBoxHayObstaculo = new javax.swing.JCheckBox();
         jCheckBoxHayLuz = new javax.swing.JCheckBox();
         jCheckBoxNodoInicio = new javax.swing.JCheckBox();
+        jCheckBoxNodoDestino = new javax.swing.JCheckBox();
         jCheckBoxServicioAscensor = new javax.swing.JCheckBox();
         jCheckBoxEnergiaElectrica = new javax.swing.JCheckBox();
 
@@ -75,6 +77,10 @@ public class PanelSetearDatos extends JPanel{
         jCheckBoxNodoInicio.setText("Nodo Inicio");
         this.add(jCheckBoxNodoInicio);
         jCheckBoxNodoInicio.setBounds(10, 100, 150, 23);
+        
+        jCheckBoxNodoDestino.setText("Nodo Destino");
+        this.add(jCheckBoxNodoDestino);
+        jCheckBoxNodoDestino.setBounds(10, 120, 150, 23);
 
         jCheckBoxServicioAscensor.setSelected(true);
         jCheckBoxServicioAscensor.setText("Servicio Ascensor");

@@ -9,15 +9,23 @@ import domain.Nodo;
 import domain.Punto;
 import frsf.cidisi.exercise.agente.search.AgenteMain;
 import frsf.cidisi.exercise.agente.search.AgentePerception;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.PrintWriter;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Scanner;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.SwingWorker;
 
 /**
  *
@@ -29,11 +37,11 @@ public class Frame extends JFrame{
     public PanelMapa panelMapa;
     public ImagenFondo imagen; 
     public Frame(Map<Punto,Nodo> mapa, AgenteMain agenteMain){
-        setBounds(0, 0, 1200, 600);
+        setBounds(0, 0, 1200, 720);
         getContentPane().setLayout(null);
         imagen= new ImagenFondo(mapa);
         panelMapa = new PanelMapa(mapa,imagen,agenteMain);
-        panelMapa.setBounds(400,0,700,600);
+        panelMapa.setBounds(400,0,700,500);
         panelMapa.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -75,6 +83,41 @@ public class Frame extends JFrame{
         int x= nodoPosicion.getUbicacion().getX();
         int y= nodoPosicion.getUbicacion().getY();
         imagen.setAgente(x, y);
+    }
+    public void addConsola(InputStream out, PrintWriter in){
+        JTextArea area = new JTextArea();
+        JScrollPane panelConsola = new JScrollPane(area);
+
+        // handle "System.out"
+        new SwingWorker<Void, String>() {
+            @Override protected Void doInBackground() throws Exception {
+                Scanner s = new Scanner(out);
+                while (s.hasNextLine()) publish(s.nextLine() + "\n");
+                return null;
+            }
+            @Override protected void process(List<String> chunks) {
+                for (String line : chunks) area.append(line);
+            }
+        }.execute();
+
+        // handle "System.in"
+        area.addKeyListener(new KeyAdapter() {
+            private StringBuffer line = new StringBuffer();
+            @Override public void keyTyped(KeyEvent e) {
+                char c = e.getKeyChar();
+                if (c == KeyEvent.VK_ENTER) {
+                    in.println(line);
+                    line.setLength(0); 
+                } else if (c == KeyEvent.VK_BACK_SPACE) { 
+                    line.setLength(line.length() - 1); 
+                } else if (!Character.isISOControl(c)) {
+                    line.append(e.getKeyChar());
+                }
+            }
+        });
+        panelConsola.setBounds(400, 515, 600, 130);
+        this.add(panelConsola);
+        
     }
     
 }

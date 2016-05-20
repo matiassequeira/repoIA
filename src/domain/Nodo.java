@@ -181,7 +181,7 @@ public class Nodo {
     	
     	int xn2= nodo2.getUbicacion().getX();
     	int yn2= nodo2.getUbicacion().getY();
-    	
+    	       System.out.println("entra");
     	Double calculo= Math.sqrt(Math.pow(xn1-xn2, 2)+Math.pow(yn1-yn2, 2));
     	
     	return calculo;

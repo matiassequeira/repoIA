@@ -199,7 +199,7 @@ public class ImagenFondo extends JComponent{
                     g.setColor(Color.BLUE);
                 double x= dimension.width*(iteradorMapa.getKey().getX()/tamanioMapaX);
                 double y =dimension.height*(iteradorMapa.getKey().getY()/tamanioMapaY);
-                System.out.println("dibuja nodo"+x+"y "+y);
+                
                 g.fillOval((int)x,(int)-y,diametroNodo,diametroNodo);
             }
         }
@@ -213,7 +213,7 @@ public class ImagenFondo extends JComponent{
         
         double xAg= dimension.width*(agente.getPosicionX()/tamanioMapaX);
         double yAg =dimension.height*(agente.getPosicionY()/tamanioMapaY);
-        System.out.println("pos agente"+xAg+"y "+yAg);
+        
         g.drawImage(iconoAgente, (int)xAg, (int)-yAg, null);
         
         //Dibuja lineas del recorrido del agete
