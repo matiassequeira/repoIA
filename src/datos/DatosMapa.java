@@ -15,10 +15,22 @@ public class DatosMapa {
 	
 	private static Map<Punto, Nodo> mapa = new HashMap<Punto, Nodo>();
 	private static Nodo posicion;
+        private static boolean ascensoresFueraServicio;
+      	private static boolean energiaElectrica;
+
+
 	private static Nodo destino;
 	private static List<Nodo> obstaculos= new ArrayList<Nodo>();
 	private static List<Nodo> nodosSinLuz= new ArrayList<Nodo>();
-	
+        
+        
+    public static void setPosicion(Nodo posicion) {
+        DatosMapa.posicion = posicion;
+    }
+
+    public static void setDestino(Nodo destino) {
+        DatosMapa.destino = destino;
+    }	
     private static void levantarDatos(){
     	
     	
@@ -464,7 +476,7 @@ public class DatosMapa {
         
         puntoCercaInformaticaBasicas_119_34_1.setEste(puntoCercaAula10_119_30_1);
 
-        Punto puntoSalaInformaticaBasicas_120_36_0= new Punto(120,36,0);
+        Punto puntoSalaInformaticaBasicas_120_36_0= new Punto(120,36,1);
         Nodo salaInformaticaBasicas_120_36_0= new Nodo(puntoSalaInformaticaBasicas_120_36_0, "SALAINFORMATICABASICAS");
         mapa.put(puntoSalaInformaticaBasicas_120_36_0, salaInformaticaBasicas_120_36_0);
         
@@ -561,7 +573,7 @@ public class DatosMapa {
         puntoCercaAula19_127_48_1.setSur(escaleraSanitariosAula19_124_47_1);
         puntoCercaAula19_127_48_1.setNorte(puntoCercaAula19_136_48_1);
 
-        Punto puntoSanitariosCercaAula19_127_42_0= new Punto(127,42,0);
+        Punto puntoSanitariosCercaAula19_127_42_0= new Punto(127,42,1);
         Nodo sanitariosCercaAula19_127_42_0= new Nodo(puntoSanitariosCercaAula19_127_42_0, "SANITARIOSCERCAAULA19");
         mapa.put(puntoSanitariosCercaAula19_127_42_0, sanitariosCercaAula19_127_42_0);
         
@@ -1042,7 +1054,7 @@ public class DatosMapa {
 
         Punto puntoCidisi_124_60_3= new Punto(124,60,3);
         Nodo cidisi_124_60_3= new Nodo(puntoCidisi_124_60_3, "CIDISI");
-        destino=cidisi_124_60_3.clone();
+//        destino=cidisi_124_60_3.clone();
         mapa.put(puntoCidisi_124_60_3, cidisi_124_60_3);
         
         cidisi_124_60_3.setNoroeste(puntoPasilloDeptoISI_131_61_3);
@@ -1114,9 +1126,9 @@ public class DatosMapa {
         ascensorPB_115_84_0.setAscensor2(ascensor2Piso_114_84_2);
         ascensorPB_115_84_0.setAscensor3(ascensor3Piso_114_84_3);
         
-        posicion=hall_108_39_0.clone();
-        obstaculos.add(escaleraCecovi_122_64_1);
-        nodosSinLuz.add(giedi_114_43_0);
+        //posicion=hall_108_39_0.clone();
+        //obstaculos.add(escaleraCecovi_122_64_1);
+        //nodosSinLuz.add(giedi_114_43_0);
     }
 
 	public static Map<Punto, Nodo> cargarDatos() {
@@ -1151,5 +1163,47 @@ public class DatosMapa {
 		// TODO Auto-generated method stub
 		return nodosSinLuz;
 	}
-	                
+	public static void addObstaculo(Nodo nodo){
+            obstaculos.add(nodo);
+        }                
+        public static void removeObstaculo(Nodo nodo){
+            Nodo nodoEliminar=null;
+            for(Nodo nodoIterador : obstaculos){
+                if(nodoIterador.equals(nodo)){
+                    nodoEliminar=nodoIterador;
+                }
+            }
+            obstaculos.remove(nodoEliminar);
+            
+        }
+        public static void addNodoSinLuz(Nodo nodo){
+            nodosSinLuz.add(nodo);
+        }                
+        public static void removeNodoSinLuz(Nodo nodo){
+            Nodo nodoEliminar=null;
+            for(Nodo nodoIterador : nodosSinLuz){
+                if(nodoIterador.equals(nodo)){
+                    nodoEliminar=nodoIterador;
+                }
+            }
+            nodosSinLuz.remove(nodoEliminar);
+            
+        }
+
+    public static void setAscensoresFueraServicio(boolean ascensoresFueraServicio) {
+        DatosMapa.ascensoresFueraServicio = ascensoresFueraServicio;
+    }
+
+    public static void setEnergiaElectrica(boolean energiaElectrica) {
+        DatosMapa.energiaElectrica = energiaElectrica;
+    }
+
+    public static boolean isAscensoresFueraServicio() {
+        return ascensoresFueraServicio;
+    }
+
+    public static boolean isEnergiaElectrica() {
+        return energiaElectrica;
+    }
+        
 }

@@ -10,7 +10,7 @@ import frsf.cidisi.faia.environment.Environment;
 import frsf.cidisi.faia.state.AgentState;
 
 public class Facultad extends Environment {
-
+    
     public Facultad() {
         // Create the environment state
         this.environmentState = new EstadoFacultad();
@@ -63,7 +63,7 @@ public class Facultad extends Environment {
          }
         perception.setNodosAdyacentesConObstaculos(nodosAdyacentesConObstaculos);
 
-        
+        this.getEnvironmentState().getFrame().setPerception(posicionAgente);
         return perception;
     }
 

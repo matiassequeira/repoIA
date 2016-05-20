@@ -5,6 +5,7 @@
  */
 package interfaz;
 
+import datos.DatosMapa;
 import domain.Nodo;
 import domain.Punto;
 import excepciones.CoordenadasSinNodoException;
@@ -45,8 +46,8 @@ public class ImagenFondo extends JComponent{
     public ArrayList listaRecorrido;
     public Image iconoAgente;
    
-    private double tamanioMapaX=194.0;
-    private double tamanioMapaY=97.0;
+    private double tamanioMapaX=198.0;
+    private double tamanioMapaY=96.0;
     
     public Map<Punto,Nodo> mapa; 
     public int diametroNodo=15;
@@ -54,6 +55,7 @@ public class ImagenFondo extends JComponent{
     Dimension dimension;
     public Nodo nodoClickeado;
     ScrollPanelMapa scroll; 
+
    // public Image img;
     public ImagenFondo(Map<Punto,Nodo> mapa){
         
@@ -173,35 +175,25 @@ public class ImagenFondo extends JComponent{
     public void cargarPuntos(Graphics g){
         g.translate(0,dimension.height);
        
-        /*HALL
-        g.setColor(Color.BLUE);       
-        double x= dim.width*(108.0/tamanioMapaX);
-        double y =dim.height*(39.0/tamanioMapaY);        
-        g.fillOval((int)x,(int)-y,15,15);
-       
-        //FAGDUT
-        g.setColor(Color.BLUE);
-        x= dim.width*(104.0/tamanioMapaX);
-        y =dim.height*(30.0/tamanioMapaY);
-        g.fillOval((int)x,(int)-y,15,15);
         
-        //AULA1
-        g.setColor(Color.BLUE);
-        x= dim.width*(110.0/tamanioMapaX);
-        y =dim.height*(30.0/tamanioMapaY);
-        g.fillOval((int)x,(int)-y,15,15);*/
         for(Map.Entry<Punto,Nodo> iteradorMapa : mapa.entrySet()){
             if(iteradorMapa.getKey().getZ()==piso){
-                if(iteradorMapa.getValue().hayObstaculo()){
-                    g.setColor(Color.RED);
-                }
-                else
-                    g.setColor(Color.BLUE);
+               
+                g.setColor(Color.BLUE);
                 double x= dimension.width*(iteradorMapa.getKey().getX()/tamanioMapaX);
                 double y =dimension.height*(iteradorMapa.getKey().getY()/tamanioMapaY);
                 
                 g.fillOval((int)x,(int)-y,diametroNodo,diametroNodo);
             }
+        }
+        for(Nodo nodoIterador : DatosMapa.getObstaculos()){
+             if(nodoIterador.getUbicacion().getZ()==piso){
+                g.setColor(Color.RED);
+                double x= dimension.width*(nodoIterador.getUbicacion().getX()/tamanioMapaX);
+                double y =dimension.height*(nodoIterador.getUbicacion().getY()/tamanioMapaY);
+                
+                g.fillOval((int)x,(int)-y,diametroNodo,diametroNodo);
+                }
         }
         if(nodoClickeado!=null){
             g.setColor(Color.ORANGE);
@@ -211,31 +203,48 @@ public class ImagenFondo extends JComponent{
         }
         //IconoAgente
         
-        double xAg= dimension.width*(agente.getPosicionX()/tamanioMapaX);
-        double yAg =dimension.height*(agente.getPosicionY()/tamanioMapaY);
+        double xAg= agente.getPosicionX();
+        double yAg =agente.getPosicionY();
         
         g.drawImage(iconoAgente, (int)xAg, (int)-yAg, null);
         
         //Dibuja lineas del recorrido del agete
         Graphics2D g2d = (Graphics2D)g;
         
-        for (int i=0; i+4<=listaRecorrido.size();i++) {
+        for (int i=0; i+6<=listaRecorrido.size();i++) {
             
-           g2d.setStroke(new BasicStroke(2));
-           g2d.setColor(Color.GREEN);
-           double x1= dimension.width *((double)listaRecorrido.get(i)/tamanioMapaX);
-           double y1 =dimension.height*((double)listaRecorrido.get(i+1)/tamanioMapaY);
-           
-           double x2= dimension.width*((double)listaRecorrido.get(i+2)/tamanioMapaX);
-           double y2 =dimension.height*((double)listaRecorrido.get(i+3)/tamanioMapaY);
-           g2d.drawLine((int)x1+7,(int)-y1+7,(int)x2+7,(int)-y2+7);
+            double x1= dimension.width *((double)listaRecorrido.get(i)/tamanioMapaX);
+            double y1 =dimension.height*((double)listaRecorrido.get(i+1)/tamanioMapaY);
+            double z1=(double) listaRecorrido.get(i+2);
 
+            double x2= dimension.width*((double)listaRecorrido.get(i+3)/tamanioMapaX);
+            double y2 =dimension.height*((double)listaRecorrido.get(i+4)/tamanioMapaY);
+            double z2=(double) listaRecorrido.get(i+5);
+           if((int)z1==piso){
+               if((int)z2==piso){
            
-           g.setColor(Color.GREEN);
-            g.fillOval((int)x1,(int)-y1,diametroNodo,diametroNodo);
-            g.fillOval((int)x2,(int)-y2,diametroNodo,diametroNodo);
+                    g2d.setStroke(new BasicStroke(2));
+                    g2d.setColor(Color.GREEN);
+                    
+                    g2d.drawLine((int)x1+7,(int)-y1+7,(int)x2+7,(int)-y2+7);
 
+
+                    
+                     g.fillOval((int)x1,(int)-y1,diametroNodo,diametroNodo);
+                     g.fillOval((int)x2,(int)-y2,diametroNodo,diametroNodo);
+               }
+               else{
+                   g.setColor(Color.PINK);
+                   g.fillOval((int)x1,(int)-y1,diametroNodo,diametroNodo);
+               }
+           }
+           else if((int)z2==piso){
+               g.setColor(Color.PINK);
+                   g.fillOval((int)x1,(int)-y1,diametroNodo,diametroNodo);
+           }
         }
+
+        
             
         try {
             //Si el mouse esta sobre un nodo, el mwtodo devolvera el nodo
@@ -245,7 +254,7 @@ public class ImagenFondo extends JComponent{
             double y =dimension.height*(nodoBajoMouse.getUbicacion().getY()/tamanioMapaY);
             
             g.fillOval((int)x,(int)-y,diametroNodo,diametroNodo);
-            System.out.println("bajo mause"+(int)x+"y "+(int)-y);
+            
         } catch (CoordenadasSinNodoException e1) {
            
             //De lo contrario, tirar� esta excepci�n, y debemos hacer nada
@@ -286,12 +295,13 @@ public class ImagenFondo extends JComponent{
     public Nodo getNodoClickeado(){
         return nodoClickeado;
     }
-    public void setAgente(int x, int y){
-              
+    public void setAgente(int x, int y, int z) {
+        
         agente.setPosicionX(x);
         agente.setPosicionY(y);
         listaRecorrido.add((double)x);
         listaRecorrido.add((double)y);
+        listaRecorrido.add((double)z);
         
         
         double xAg= dimension.width*(agente.getPosicionX()/tamanioMapaX);
@@ -304,13 +314,7 @@ public class ImagenFondo extends JComponent{
         repaint();
         
     }
-     public void animar(boolean turnOnOff) {
-        if (turnOnOff) {           
-            //timer.start();
-        } else {
-            //timer.stop();
-        }
-    }
+    
      public void instanciarListaRecorrido(){
          listaRecorrido= new ArrayList();
          repaint();
@@ -318,4 +322,15 @@ public class ImagenFondo extends JComponent{
      public void setScroll(ScrollPanelMapa scrollPanel){
          scroll=scrollPanel;
      }
+
+     public ArrayList vaciarListaRecorrido() {
+         ArrayList retornar= (ArrayList) listaRecorrido.clone();
+         this.instanciarListaRecorrido();
+         return retornar;
+        
+        }
+        
+        
+        
+   
 }

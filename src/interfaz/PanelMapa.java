@@ -10,6 +10,7 @@ import domain.Punto;
 import excepciones.CoordenadasSinNodoException;
 import frsf.cidisi.exercise.agente.search.AgenteMain;
 import java.awt.Image;
+import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -124,6 +125,33 @@ public class PanelMapa extends JPanel{
 
             
         });
+        
+        JButton botonReiniciar= new JButton();
+        botonReiniciar.setText("Correr de nuevo");
+        add(botonReiniciar);
+        botonReiniciar.setBounds(100, 460, 150, 35);
+        botonReiniciar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonReiniciar();
+            }
+
+            
+        });
+        JButton botonBorrar= new JButton();
+        botonBorrar.setText("Borrer recorrido");
+        add(botonBorrar);
+        botonBorrar.setBounds(280, 460, 150, 35);
+        botonBorrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonBorrar();
+            }
+
+            
+
+            
+        });
+        
+        
         add(scrollPanelMap);
         
         
@@ -131,7 +159,7 @@ public class PanelMapa extends JPanel{
             
     }
       private void jButtonDisminuirClicked(MouseEvent evt) {
-        image.setZoom(image.getZoom()*0.2);
+        image.setZoom(image.getZoom()*0.80);
       }
       private void jButtonAumentarClicked(MouseEvent evt) {
           image.setZoom(image.getZoom()*1.2);
@@ -140,7 +168,30 @@ public class PanelMapa extends JPanel{
          image.setPiso(piso);
       }
       private void jButtonIniciar(MouseEvent evt) {
+          image.vaciarListaRecorrido();
           agenteMain.simulatorStart();
+      }
+      
+      private void jButtonReiniciar(){
+          
+        /*ArrayList nuevaLista= image.vaciarListaRecorrido();
+          
+        try{
+           for(int i=1; i<nuevaLista.size();i++){
+               System.out.println("Me han pulsado");
+               Thread.sleep(1000); //Tarea que consume diez segundos.
+               System.out.println("Terminé");
+               double x=  (double) nuevaLista.get(i-1);
+               double y =  (double) nuevaLista.get(i);
+               //image.setAgente((int)x, (int)y);
+           }
+        }
+        catch(InterruptedException e){
+            System.out.println("interfaz.ImagenFondo.reiniciar()");
+        }*/
+      }
+      private void jButtonBorrar() {
+          image.vaciarListaRecorrido();
       }
      
 

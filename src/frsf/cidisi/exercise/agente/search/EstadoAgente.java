@@ -22,6 +22,7 @@ import frsf.cidisi.faia.solver.search.BreathFirstSearch;
 import frsf.cidisi.faia.solver.search.DepthFirstSearch;
 import frsf.cidisi.faia.solver.search.NTree;
 import frsf.cidisi.faia.solver.search.UniformCostSearch;
+import interfaz.Frame;
 
 /**
  * Represent the internal state of the Agent.
@@ -35,20 +36,16 @@ public class EstadoAgente extends SearchBasedAgentState {
     private boolean hayEnergiaElectrica;
     private Vector<NTree> ramaExpandidaAObjetivo;
     
-    private int searchStrategy=4;
+    private static int searchStrategy;
 	public  static final int PROFUNDIDAD=1;
 	public  static final int ANCHURA=2;
 	public  static final int COSTO_UNIFORME=3;
 	public static final int A_ASTERISCO=4;
     
 
-    public int getSearchStrategy() {
-		return searchStrategy;
-	}
+   
 
-	public void setSearchStrategy(int searchStrategy) {
-		searchStrategy = searchStrategy;
-	}
+	
 
 	public EstadoAgente() {
     
@@ -253,6 +250,10 @@ public class EstadoAgente extends SearchBasedAgentState {
     		 energiaDisponible-=10;
     	 else
     		 energiaDisponible=arg;
+         double e = energiaDisponible;
+         Frame.updateEnergia((int)e);
+         
+         
      }
    
      public Map<Punto,Nodo> getMapa(){
@@ -274,9 +275,14 @@ public class EstadoAgente extends SearchBasedAgentState {
 		// TODO Auto-generated method stub
 		 if(searchStrategy==COSTO_UNIFORME)
 			 energiaDisponible-= ((NodoEscalera) this.getPosicion()).getCostoUsarEscalera()*10;
-    	 else
-    		 energiaDisponible=arg;
+                else
+                         energiaDisponible=arg;
+                 double e = energiaDisponible;
+                Frame.updateEnergia((int)e);
+                 
 	}
-	
+	public static void setSearchStrategy(int searchStrategy) {
+		EstadoAgente.searchStrategy = searchStrategy;
+	}
 }
 

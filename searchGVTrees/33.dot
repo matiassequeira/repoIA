@@ -1,0 +1,60 @@
+digraph g {
+node [shape = Mrecord];
+nodo0[label="{EO: 0|cost: 0.0|A: null}"]
+nodo1[label="{EO: 1|cost: 33.45362404707371|A: UsarEscalera}"]
+nodo4[label="{EO: 4|cost: 66.14220158752323|A: IrSur|Posicion\nagente:ESCALERACERCAANEXO\n\nEn\nel\npunto:\n136\n66\n2
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:143.55506573143953
+}"]
+
+nodo1 -> nodo4;
+nodo5[label="{EO: 5|cost: 67.80632414148103|A: IrNoreste|Posicion\nagente:ESCALERACERCAANEXO\n\nEn\nel\npunto:\n136\n66\n2
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:143.55506573143953
+}"]
+
+nodo1 -> nodo5;
+nodo6[label="{EO: 6|cost: 68.25227263402245|A: IrNoroeste|Posicion\nagente:ESCALERACERCAANEXO\n\nEn\nel\npunto:\n136\n66\n2
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:143.55506573143953
+}"]
+
+nodo1 -> nodo6;
+
+nodo0 -> nodo1;
+nodo2[label="{EO: 2|cost: 29.219544457292887|A: IrSur}"]
+nodo3[label="{EO: 3|cost: 41.29061226915836|A: IrEste|Posicion\nagente:PUNTOCERCAESCALERAANEXO\n\nEn\nel\npunto:\n131\n66\n3
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:143.55506573143953
+}"]
+nodo7[label="{EO: 7|cost: 52.526680246658145|A: IrSur|Posicion\nagente:PUNTOPASILLODEPTOISI\n\nEn\nel\npunto:\n131\n61\n3
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:143.55506573143953
+}"]
+
+nodo3 -> nodo7;
+nodo8[label="{EO: 8|cost: 64.32390864753127|A: IrNorte|Posicion\nagente:PUNTOPASILLODEPTOISI\n\nEn\nel\npunto:\n131\n61\n3
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:143.55506573143953
+}"]
+
+nodo3 -> nodo8;
+nodo9[label="{EO: 9|cost: 48.361680081023835|A: IrSureste|Posicion\nagente:PUNTOPASILLODEPTOISI\n\nEn\nel\npunto:\n131\n61\n3
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:143.55506573143953
+}"]
+
+nodo3 -> nodo9;
+nodo10[label="{EO: 10|cost: 54.94603916574324|A: IrNoreste|Posicion\nagente:PUNTOPASILLODEPTOISI\n\nEn\nel\npunto:\n131\n61\n3
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:143.55506573143953
+}"]
+
+nodo3 -> nodo10;
+
+nodo2 -> nodo3;
+
+nodo0 -> nodo2;
+
+
+}

@@ -82,6 +82,8 @@ public class NewJFrame extends javax.swing.JFrame {
         jCheckBox3 = new javax.swing.JCheckBox();
         jCheckBox4 = new javax.swing.JCheckBox();
         jCheckBox5 = new javax.swing.JCheckBox();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -126,6 +128,14 @@ public class NewJFrame extends javax.swing.JFrame {
         jCheckBox5.setText("Energia Electrica");
         jPanel1.add(jCheckBox5);
         jCheckBox5.setBounds(10, 250, 110, 23);
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AMPLITUD", "COSTO_UNIFORME", "A_ASTERISCO" }));
+        jPanel1.add(jComboBox1);
+        jComboBox1.setBounds(10, 190, 120, 20);
+
+        jLabel1.setText("Estrategia de busqueda:");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(10, 170, 130, 14);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(10, 10, 150, 290);
@@ -178,6 +188,8 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBox3;
     private javax.swing.JCheckBox jCheckBox4;
     private javax.swing.JCheckBox jCheckBox5;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;

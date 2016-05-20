@@ -9,6 +9,7 @@ import domain.Nodo;
 import domain.Punto;
 import frsf.cidisi.exercise.agente.search.AgenteMain;
 import frsf.cidisi.exercise.agente.search.AgentePerception;
+import java.awt.Color;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
@@ -33,16 +34,18 @@ import javax.swing.SwingWorker;
  */
 public class Frame extends JFrame{
     
-    public PanelSetearDatos panelDatos;
-    public PanelMapa panelMapa;
-    public ImagenFondo imagen; 
+    private PanelSetearDatos panelDatos;
+    private PanelMapa panelMapa;
+    private ImagenFondo imagen; 
+    private static ProgressBar progressBar;
+
+    
+    private static int energiaTotal;
     public Frame(Map<Punto,Nodo> mapa, AgenteMain agenteMain){
         setBounds(0, 0, 1200, 720);
         getContentPane().setLayout(null);
         imagen= new ImagenFondo(mapa);
-        panelMapa = new PanelMapa(mapa,imagen,agenteMain);
-        panelMapa.setBounds(400,0,700,500);
-        panelMapa.addMouseListener(new MouseListener() {
+        imagen.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 mouseClickedPanelMapa(e);
@@ -66,23 +69,42 @@ public class Frame extends JFrame{
 
            
         });
+        
+        panelMapa = new PanelMapa(mapa,imagen,agenteMain);
+        panelMapa.setBounds(400,0,700,500);
+        
         getContentPane().add(panelMapa);
         
         panelDatos = new PanelSetearDatos();
-        panelDatos.setBounds(0, 0, 350,690 );
+        panelDatos.setBounds(0, 0, 350,300 );
         getContentPane().add(panelDatos);
+        
+        //energiaGastada = 0;
+	energiaTotal = 300;
+	progressBar = new ProgressBar(energiaTotal,energiaTotal,"Porcentaje");
+	progressBar.setBackground(Color.black);
+	progressBar.setBounds(400, 630, 539, 29);
+	add(progressBar);
+        
         this.setVisible(true);
         
     }
-     private void mouseClickedPanelMapa(MouseEvent e) {
-         
-         panelDatos.setearNodo(imagen.getNodoClickeado());
+     
+    private void mouseClickedPanelMapa(MouseEvent e) {
+        
+        panelDatos.setearNodo(imagen.getNodoClickeado());
      }
-    public void setPerception(AgentePerception perception){
-        Nodo nodoPosicion= perception.getPosicionAgente();
+    public void setPerception(Nodo nodoPosicion){
+        try{
         int x= nodoPosicion.getUbicacion().getX();
         int y= nodoPosicion.getUbicacion().getY();
-        imagen.setAgente(x, y);
+        int z= nodoPosicion.getUbicacion().getZ();
+        imagen.setAgente(x, y,z);
+        }
+        catch(NullPointerException e){
+            System.err.println("Seleccionar nodo inicio");
+        }
+        
     }
     public void addConsola(InputStream out, PrintWriter in){
         JTextArea area = new JTextArea();
@@ -115,10 +137,13 @@ public class Frame extends JFrame{
                 }
             }
         });
-        panelConsola.setBounds(400, 515, 600, 130);
+        panelConsola.setBounds(10, 300, 300, 300);
         this.add(panelConsola);
         
     }
+    public static void updateEnergia(int gasto){
+		progressBar.updateActualValue(gasto);
+	}
     
 }
 

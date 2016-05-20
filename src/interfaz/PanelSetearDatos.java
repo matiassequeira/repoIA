@@ -5,9 +5,14 @@
  */
 package interfaz;
 
+import datos.DatosMapa;
 import domain.Nodo;
+import frsf.cidisi.exercise.agente.search.Agente;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -24,6 +29,7 @@ public class PanelSetearDatos extends JPanel{
     JCheckBox jCheckBoxEnergiaElectrica ;
     JTextField textDescripcionNodo;
     Nodo nodo;
+    JComboBox jComboBoxEstrategia;
     
     public PanelSetearDatos(){
         
@@ -50,7 +56,7 @@ public class PanelSetearDatos extends JPanel{
         
         textDescripcionNodo.setBorder(null);
         this.add(textDescripcionNodo);
-        textDescripcionNodo.setBounds(50, 10, 90, 14);
+        textDescripcionNodo.setBounds(50, 10, 300, 14);
 
         jCheckBoxHayObstaculo.setText("Hay Obstaculo");
         jCheckBoxHayObstaculo.addActionListener(new java.awt.event.ActionListener() {
@@ -67,9 +73,7 @@ public class PanelSetearDatos extends JPanel{
         jCheckBoxHayLuz.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBoxLuzActionPerformed(evt);
-            }
-
-           
+            }  
         });
         this.add(jCheckBoxHayLuz);
         jCheckBoxHayLuz.setBounds(10, 70, 150, 23);
@@ -77,29 +81,80 @@ public class PanelSetearDatos extends JPanel{
         jCheckBoxNodoInicio.setText("Nodo Inicio");
         this.add(jCheckBoxNodoInicio);
         jCheckBoxNodoInicio.setBounds(10, 100, 150, 23);
+        jCheckBoxNodoInicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxNodoInicioActionPerformed(evt);
+            }  
+
+            
+        });
         
         jCheckBoxNodoDestino.setText("Nodo Destino");
         this.add(jCheckBoxNodoDestino);
         jCheckBoxNodoDestino.setBounds(10, 120, 150, 23);
+        jCheckBoxNodoDestino.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxNodoDestinoActionPerformed(evt);
+            }  
+        });
 
         jCheckBoxServicioAscensor.setSelected(true);
+        DatosMapa.setAscensoresFueraServicio(true);
         jCheckBoxServicioAscensor.setText("Servicio Ascensor");
         this.add(jCheckBoxServicioAscensor);
         jCheckBoxServicioAscensor.setBounds(10, 220, 150, 23);
+        jCheckBoxServicioAscensor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxServicioAscensor();
+            }  
+
+            
+        });
 
         jCheckBoxEnergiaElectrica.setSelected(true);
+        DatosMapa.setEnergiaElectrica(true);
         jCheckBoxEnergiaElectrica.setText("Energia Electrica");
         this.add(jCheckBoxEnergiaElectrica);
         jCheckBoxEnergiaElectrica.setBounds(10, 250, 150, 23);
+        jCheckBoxEnergiaElectrica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxServicioEnergiaElectrica();
+            }  
+
+            
+
+            
+        });
+        
+        jComboBoxEstrategia = new JComboBox();
+        jComboBoxEstrategia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AMPLITUD", "COSTO_UNIFORME", "A_ASTERISCO" }));
+        this.add(jComboBoxEstrategia);
+        jComboBoxEstrategia.setBounds(10, 190, 120, 20);
+        jComboBoxEstrategia.addActionListener(new ActionListener () {
+            public void actionPerformed(ActionEvent e) {
+                jComboBoxListener();
+            }
+          
+           
+        });
+        Agente.setSearchStrategy(2);
+
+        JLabel jLabel = new JLabel();
+        jLabel.setText("Estrategia de busqueda:");
+        this.add(jLabel);
+        jLabel.setBounds(10, 170, 200, 14);
+
         
         this.setearNodo(null);
     }
     private void jCheckBoxObstaculoActionPerformed(ActionEvent evt) {
-        nodo.hayObstaculo(jCheckBoxHayObstaculo.isSelected());
+        if(jCheckBoxHayObstaculo.isSelected())
+            DatosMapa.addObstaculo(nodo);
         
     }
     private void jCheckBoxLuzActionPerformed(ActionEvent evt) {
-        nodo.hayLuz(jCheckBoxHayLuz.isSelected());
+        if(jCheckBoxHayLuz.isSelected())
+            DatosMapa.addNodoSinLuz(nodo);
         
     }    
     public void setearNodo(Nodo nodo){
@@ -107,6 +162,8 @@ public class PanelSetearDatos extends JPanel{
             textDescripcionNodo.setText("");
             jCheckBoxHayLuz.setSelected(false);
             jCheckBoxHayObstaculo.setSelected(false);
+            jCheckBoxNodoInicio.setSelected(false);
+            jCheckBoxNodoDestino.setSelected(false);
             
             
         }
@@ -115,9 +172,36 @@ public class PanelSetearDatos extends JPanel{
             textDescripcionNodo.setText(nodo.getDescripcion());
             jCheckBoxHayLuz.setSelected(nodo.hayLuz());
             jCheckBoxHayObstaculo.setSelected(nodo.hayObstaculo());
+            jCheckBoxNodoInicio.setSelected(false);
+            jCheckBoxNodoDestino.setSelected(false);
+            if(DatosMapa.getPosicion()!=null)
+                    if (DatosMapa.getPosicion().equals(nodo))
+                        jCheckBoxNodoInicio.setSelected(true);
+            if(DatosMapa.getDestino()!=null)
+                if(DatosMapa.getDestino().equals(nodo))
+                    jCheckBoxNodoDestino.setSelected(true);
             
             
         }
             
     }
+    private void jCheckBoxNodoInicioActionPerformed(ActionEvent evt) {
+       if(jCheckBoxNodoInicio.isSelected())
+           DatosMapa.setPosicion(nodo);
+    }
+    private void jCheckBoxNodoDestinoActionPerformed(ActionEvent evt) {
+       if(jCheckBoxNodoDestino.isSelected())
+           DatosMapa.setDestino(nodo);
+        
+    }
+     private void jComboBoxListener() {
+       Agente.setSearchStrategy(jComboBoxEstrategia.getSelectedIndex()+2);
+     }
+     private void jCheckBoxServicioAscensor() {
+         if(jCheckBoxServicioAscensor.isSelected())  
+            DatosMapa.setAscensoresFueraServicio(false);
+        }
+     private void jCheckBoxServicioEnergiaElectrica() {
+         DatosMapa.setEnergiaElectrica(false);
+     }
 }

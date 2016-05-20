@@ -1,0 +1,42 @@
+digraph g {
+node [shape = Mrecord];
+nodo0[label="{EO: 0|cost: 0.0|A: null}"]
+nodo1[label="{EO: 1|cost: 12.071067811865476|A: IrEste}"]
+nodo3[label="{EO: 3|cost: 23.307135789365265|A: IrSur|Posicion\nagente:PUNTOPASILLODEPTOISI\n\nEn\nel\npunto:\n131\n61\n3
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:123.55506573143953
+}"]
+
+nodo1 -> nodo3;
+nodo4[label="{EO: 4|cost: 35.104364190238385|A: IrNorte|Posicion\nagente:PUNTOPASILLODEPTOISI\n\nEn\nel\npunto:\n131\n61\n3
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:123.55506573143953
+}"]
+
+nodo1 -> nodo4;
+nodo5[label="{EO: 5|cost: 19.14213562373095|A: IrSureste|Posicion\nagente:PUNTOPASILLODEPTOISI\n\nEn\nel\npunto:\n131\n61\n3
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:123.55506573143953
+}"]
+
+nodo1 -> nodo5;
+nodo6[label="{EO: 6|cost: 25.726494708450353|A: IrNoreste|Posicion\nagente:PUNTOPASILLODEPTOISI\n\nEn\nel\npunto:\n131\n61\n3
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:123.55506573143953
+}"]
+
+nodo1 -> nodo6;
+
+nodo0 -> nodo1;
+nodo2[label="{EO: 2|cost: 12.816653826391969|A: IrNorte}"]
+nodo7[label="{EO: 7|cost: 46.27027787346568|A: UsarEscalera|Posicion\nagente:ESCALERACERCAANEXO\n\nEn\nel\npunto:\n133\n66\n3
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:123.55506573143953
+}"]
+
+nodo2 -> nodo7;
+
+nodo0 -> nodo2;
+
+
+}

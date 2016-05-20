@@ -8,6 +8,7 @@ import datos.DatosMapa;
 import domain.Nodo;
 import domain.Punto;
 import frsf.cidisi.faia.state.EnvironmentState;
+import interfaz.Frame;
 
 /**
  * This class represents the real world state.
@@ -21,6 +22,7 @@ public class EstadoFacultad extends EnvironmentState {
     private boolean ascensoresFueraServicio;
     private List<Nodo> luminosidad;
     private Nodo destinoAgente;
+    private Frame frame;
 	
     public EstadoFacultad() {
 		 posicionAgente = new Nodo(null, null);
@@ -120,6 +122,14 @@ public class EstadoFacultad extends EnvironmentState {
      public void setDestinoAgente(Nodo arg){
         destinoAgente = arg;
      }
+
+    public Frame getFrame() {
+        return frame;
+    }
+
+    public void setFrame(Frame frame) {
+        this.frame = frame;
+    }
 	
 
 }

@@ -27,7 +27,7 @@ import java.util.Vector;
 
 public class Agente extends SearchBasedAgent {
 	
-	private int searchStrategy=4;
+	private static int searchStrategy;
 	public  static final int PROFUNDIDAD=1;
 	public  static final int ANCHURA=2;
 	public  static final int COSTO_UNIFORME=3;
@@ -127,6 +127,10 @@ public class Agente extends SearchBasedAgent {
         return selectedAction;
 
     }
+    public static void setSearchStrategy(int searchStrategy) {
+		Agente.searchStrategy = searchStrategy;
+                EstadoAgente.setSearchStrategy(searchStrategy);
+	}
 
     /**
      * This method is executed by the simulator to give the agent a perception.
