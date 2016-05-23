@@ -1,24 +1,114 @@
 digraph g {
 node [shape = Mrecord];
 nodo0[label="{EO: 0|cost: 0.0|A: null}"]
-nodo1[label="{EO: 1|cost: 32.24744871391589|A: UsarEscalera}"]
+nodo1[label="{EO: 1|cost: 1.0|A: IrEste}"]
+nodo5[label="{EO: 5|cost: 2.0|A: IrSur|Posicion\nagente:AULA1\n\nEn\nel\npunto:\n110\n30\n0
+Destino:\nAULA2\n\nEn\nel\npunto:\n122\n33\n0
+Energia\ndisponible:345.5278640450004
+}"]
+nodo13[label="{EO: 13|cost: 3.0|A: IrSuroeste|Posicion\nagente:FAGDUTPB\n\nEn\nel\npunto:\n104\n30\n0
+Destino:\nAULA2\n\nEn\nel\npunto:\n122\n33\n0
+Energia\ndisponible:345.5278640450004
+}"]
+
+nodo5 -> nodo13;
+
+nodo1 -> nodo5;
+nodo6[label="{EO: 6|cost: 2.0|A: IrNoroeste|Posicion\nagente:AULA1\n\nEn\nel\npunto:\n110\n30\n0
+Destino:\nAULA2\n\nEn\nel\npunto:\n122\n33\n0
+Energia\ndisponible:345.5278640450004
+}"]
+nodo14[label="{EO: 14|cost: 3.0|A: IrNorte|Posicion\nagente:CEUT\n\nEn\nel\npunto:\n119\n33\n0
+Destino:\nAULA2\n\nEn\nel\npunto:\n122\n33\n0
+Energia\ndisponible:345.5278640450004
+}"]
+
+nodo6 -> nodo14;
+
+nodo1 -> nodo6;
 
 nodo0 -> nodo1;
-nodo2[label="{EO: 2|cost: 24.47213595499958|A: IrNorte}"]
-nodo3[label="{EO: 3|cost: 47.47394019476158|A: IrEste|Posicion\nagente:INGRESOTRIBUNAOESTE\n\nEn\nel\npunto:\n35\n90\n0
-Destino:\nENTREHALLESTADIOYVESTUARIOS\n\nEn\nel\npunto:\n37\n86\n0
-Energia\ndisponible:300.0
+nodo2[label="{EO: 2|cost: 1.0|A: IrSureste}"]
+nodo7[label="{EO: 7|cost: 2.0|A: UsarEscalera|Posicion\nagente:ESCALERAHALL\n\nEn\nel\npunto:\n103\n33\n0
+Destino:\nAULA2\n\nEn\nel\npunto:\n122\n33\n0
+Energia\ndisponible:345.5278640450004
+}"]
+nodo15[label="{EO: 15|cost: 3.0|A: IrNorte|Posicion\nagente:ESCALERAAULA9\n\nEn\nel\npunto:\n103\n31\n1
+Destino:\nAULA2\n\nEn\nel\npunto:\n122\n33\n0
+Energia\ndisponible:345.5278640450004
 }"]
 
-nodo2 -> nodo3;
-nodo4[label="{EO: 4|cost: 28.94427190999916|A: IrNoreste|Posicion\nagente:INGRESOTRIBUNAOESTE\n\nEn\nel\npunto:\n35\n90\n0
-Destino:\nENTREHALLESTADIOYVESTUARIOS\n\nEn\nel\npunto:\n37\n86\n0
-Energia\ndisponible:300.0
+nodo7 -> nodo15;
+
+nodo2 -> nodo7;
+nodo8[label="{EO: 8|cost: 2.0|A: IrNoreste|Posicion\nagente:ESCALERAHALL\n\nEn\nel\npunto:\n103\n33\n0
+Destino:\nAULA2\n\nEn\nel\npunto:\n122\n33\n0
+Energia\ndisponible:345.5278640450004
+}"]
+nodo16[label="{EO: 16|cost: 3.0|A: IrNorte|Posicion\nagente:FAGDUTPB\n\nEn\nel\npunto:\n104\n30\n0
+Destino:\nAULA2\n\nEn\nel\npunto:\n122\n33\n0
+Energia\ndisponible:345.5278640450004
 }"]
 
-nodo2 -> nodo4;
+nodo8 -> nodo16;
+
+nodo2 -> nodo8;
 
 nodo0 -> nodo2;
+nodo3[label="{EO: 3|cost: 1.0|A: IrSuroeste}"]
+nodo9[label="{EO: 9|cost: 2.0|A: IrSur|Posicion\nagente:HALL\n\nEn\nel\npunto:\n108\n39\n0
+Destino:\nAULA2\n\nEn\nel\npunto:\n122\n33\n0
+Energia\ndisponible:345.5278640450004
+}"]
+nodo17[label="{EO: 17|cost: 3.0|A: IrSur|Posicion\nagente:INGRESO\n\nEn\nel\npunto:\n102\n40\n0
+Destino:\nAULA2\n\nEn\nel\npunto:\n122\n33\n0
+Energia\ndisponible:345.5278640450004
+}"]
+
+nodo9 -> nodo17;
+nodo18[label="{EO: 18|cost: 3.0|A: IrSureste|Posicion\nagente:INGRESO\n\nEn\nel\npunto:\n102\n40\n0
+Destino:\nAULA2\n\nEn\nel\npunto:\n122\n33\n0
+Energia\ndisponible:345.5278640450004
+}"]
+
+nodo9 -> nodo18;
+nodo19[label="{EO: 19|cost: 3.0|A: IrSuroeste|Posicion\nagente:INGRESO\n\nEn\nel\npunto:\n102\n40\n0
+Destino:\nAULA2\n\nEn\nel\npunto:\n122\n33\n0
+Energia\ndisponible:345.5278640450004
+}"]
+
+nodo9 -> nodo19;
+
+nodo3 -> nodo9;
+nodo10[label="{EO: 10|cost: 2.0|A: IrNoroeste|Posicion\nagente:HALL\n\nEn\nel\npunto:\n108\n39\n0
+Destino:\nAULA2\n\nEn\nel\npunto:\n122\n33\n0
+Energia\ndisponible:345.5278640450004
+}"]
+nodo20[label="{EO: 20|cost: 3.0|A: IrSuroeste|Posicion\nagente:GIEDI\n\nEn\nel\npunto:\n114\n43\n0
+Destino:\nAULA2\n\nEn\nel\npunto:\n122\n33\n0
+Energia\ndisponible:345.5278640450004
+}"]
+
+nodo10 -> nodo20;
+
+nodo3 -> nodo10;
+
+nodo0 -> nodo3;
+nodo4[label="{EO: 4|cost: 1.0|A: IrNoreste}"]
+nodo11[label="{EO: 11|cost: 2.0|A: IrNorte|Posicion\nagente:CEUT\n\nEn\nel\npunto:\n119\n33\n0
+Destino:\nAULA2\n\nEn\nel\npunto:\n122\n33\n0
+Energia\ndisponible:345.5278640450004
+}"]
+
+nodo4 -> nodo11;
+nodo12[label="{EO: 12|cost: 2.0|A: IrSureste|Posicion\nagente:CEUT\n\nEn\nel\npunto:\n119\n33\n0
+Destino:\nAULA2\n\nEn\nel\npunto:\n122\n33\n0
+Energia\ndisponible:345.5278640450004
+}"]
+
+nodo4 -> nodo12;
+
+nodo0 -> nodo4;
 
 
 }

@@ -1,5 +1,8 @@
 package domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Nodo {
 	Nodo sur;
 	Nodo norte;
@@ -13,6 +16,7 @@ public class Nodo {
 	String descripcion="";
 	boolean hayObstaculo;
 	boolean hayLuz;
+        List<Nodo> nodosAdyacentes;
         
 	
 	public boolean hayLuz() {
@@ -33,6 +37,7 @@ public class Nodo {
 		this.descripcion=descripcion;
 		this.hayLuz=true;
 		this.hayObstaculo=false;
+                this.nodosAdyacentes=new ArrayList<Nodo>();
 	}
 	public String getDescripcion() {
 		return descripcion;
@@ -47,6 +52,7 @@ public class Nodo {
 		this.sur = nodoSur;
 		if(nodoSur.getNorte()==null)
 			nodoSur.setNorte(this);
+                nodosAdyacentes.add(nodoSur);
 	}
 	public Nodo getNorte() {
 		return norte;
@@ -55,6 +61,7 @@ public class Nodo {
 		this.norte = nodoNorte;
 		if(nodoNorte.getSur()==null)
 			nodoNorte.setSur(this);
+                nodosAdyacentes.add(nodoNorte);
 	}
 	public Nodo getEste() {
 		return este;
@@ -63,6 +70,7 @@ public class Nodo {
 		this.este = nodoEste;
 		if(nodoEste.getOeste()==null)
 			nodoEste.setOeste(this);
+                nodosAdyacentes.add(nodoEste);
 	}
 	public Nodo getOeste() {
 		return oeste;
@@ -71,6 +79,7 @@ public class Nodo {
 		this.oeste = nodoOeste;
 		if(nodoOeste.getEste()==null)
 			nodoOeste.setEste(this);
+                nodosAdyacentes.add(nodoOeste);
 	}
 	public Nodo getSureste() {
 		return sureste;
@@ -79,6 +88,7 @@ public class Nodo {
 		this.sureste = nodoSureste;
 		if(nodoSureste.getNoroeste()==null)
 			nodoSureste.setNoroeste(this);
+                nodosAdyacentes.add(nodoSureste);
 	}
 	public Nodo getNoreste() {
 		return noreste;
@@ -87,6 +97,7 @@ public class Nodo {
 		this.noreste = nodoNoreste;
 		if(nodoNoreste.getSuroeste()==null)
 			nodoNoreste.setSuroeste(this);
+                nodosAdyacentes.add(nodoNoreste);
 	}
 	public Nodo getNoroeste() {
 		return noroeste;
@@ -95,6 +106,7 @@ public class Nodo {
 		this.noroeste = nodoNoroeste;
 		if(nodoNoroeste.getSureste()==null)
 			nodoNoroeste.setSureste(this);
+                nodosAdyacentes.add(nodoNoroeste);
 	}
 	public Nodo getSuroeste() {
 		return suroeste;
@@ -103,6 +115,7 @@ public class Nodo {
 		this.suroeste = nodoSuroeste;
 		if(nodoSuroeste.getNoreste()==null)
 			nodoSuroeste.setNoreste(this);
+                nodosAdyacentes.add(nodoSuroeste);
 	}
 	public Punto getUbicacion() {
 		return ubicacion;
@@ -198,4 +211,7 @@ public class Nodo {
     	
     	return calculo;
     }
+        public List<Nodo> getNodosAdyacentes(){
+            return nodosAdyacentes;
+        }
 }

@@ -128,9 +128,7 @@ public class DatosMapa {
         escaleraHall_103_33_0.setNoreste(fagdut_104_30_0);
         escaleraHall_103_33_0.setEscalera(escaleraAula9_103_31_1);
         
-        Punto puntoAula1_110_31_0= new Punto(110,31,0);
-        Nodo aula1_110_31_0= new Nodo(puntoAula1_110_31_0, "AULA1");
-        mapa.put(puntoAula1_110_31_0, aula1_110_31_0);
+        
         
         aula1_110_30_0.setSur(fagdut_104_30_0);
 

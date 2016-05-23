@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.Map;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.Timer;
@@ -26,11 +27,12 @@ import javax.swing.Timer;
  *
  * @author USUARIO
  */
-public class PanelMapa extends JPanel{
+public class PanelMapa extends JPanel implements Runnable{
     public  final ImagenFondo image;
     public JButton botonDisminuir;
     public JButton botonAumentar;
     public AgenteMain agenteMain;
+    private Thread hilo;
     
    
     public PanelMapa(Map mapa, ImagenFondo imagen,AgenteMain agenteMain){
@@ -168,27 +170,44 @@ public class PanelMapa extends JPanel{
          image.setPiso(piso);
       }
       private void jButtonIniciar(MouseEvent evt) {
-          image.vaciarListaRecorrido();
-          agenteMain.simulatorStart();
+         //try{
+            image.vaciarListaRecorrido();
+            
+            agenteMain.simulatorStart();
+         //}
+        // catch(NullPointerException e){
+        //    System.out.println("Seleccionar nodo destino");
+        //}
       }
       
       private void jButtonReiniciar(){
-          
-        /*ArrayList nuevaLista= image.vaciarListaRecorrido();
+         hilo= new Thread(this);
+         
+         hilo.start();
+         
+      }
+      @Override
+    public void run() {
+        
+        ArrayList nuevaLista= image.vaciarListaRecorrido();
           
         try{
-           for(int i=1; i<nuevaLista.size();i++){
-               System.out.println("Me han pulsado");
-               Thread.sleep(1000); //Tarea que consume diez segundos.
-               System.out.println("Terminé");
-               double x=  (double) nuevaLista.get(i-1);
-               double y =  (double) nuevaLista.get(i);
-               //image.setAgente((int)x, (int)y);
+        while(true){
+           for(int i=0; i+2<nuevaLista.size();i+=3){
+               
+               Thread.sleep(2000); //Tarea que consume diez segundos.
+               
+               double x=  (double) nuevaLista.get(i);
+               double y =  (double) nuevaLista.get(i+1);
+               double z= (double) nuevaLista.get(i+2);
+               image.setAgente((int)x, (int)y, (int) z);
            }
+           hilo.stop();
+        }
         }
         catch(InterruptedException e){
             System.out.println("interfaz.ImagenFondo.reiniciar()");
-        }*/
+        }
       }
       private void jButtonBorrar() {
           image.vaciarListaRecorrido();

@@ -39,15 +39,15 @@ import javax.swing.Timer;
 
 
 public class ImagenFondo extends JComponent{
-     BufferedImage img;
-     public double zoom;
-     public Agente agente;
+    BufferedImage img;
+    public double zoom;
+    public Agente agente;
     public Timer timer;
     public ArrayList listaRecorrido;
     public Image iconoAgente;
    
-    private double tamanioMapaX=198.0;
-    private double tamanioMapaY=96.0;
+    private double tamanioMapaX=197.5;
+    private double tamanioMapaY=100.0;
     
     public Map<Punto,Nodo> mapa; 
     public int diametroNodo=15;
@@ -59,7 +59,7 @@ public class ImagenFondo extends JComponent{
    // public Image img;
     public ImagenFondo(Map<Punto,Nodo> mapa){
         
-        listaRecorrido= new ArrayList();
+         listaRecorrido= new ArrayList();
          nodoClickeado=null;
          this.mapa =mapa;
          setPiso(0);
@@ -103,21 +103,7 @@ public class ImagenFondo extends JComponent{
         agente= new Agente(); 
         Image iconoAgente= new ImageIcon(getClass().getResource("/imagen/Upgraded_Robot_Sprite.png")).getImage(); // NOI18N
         agente.setPosicionXY(0,0);
-        /*timer = new Timer(16, new ActionListener (){
-            double i=104.0;
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-                if(i==110.0)
-                    timer.stop();
-                listaRecorrido.add(i);
-                listaRecorrido.add(30.0);
-                agente.setPosicionXY((int)i, 30);
-                i+=1.0;
-                repaint();
-            }
- 
-            });*/
+        
     }
     public void setPiso(int pisoSeleccionado){
         try{
@@ -125,7 +111,7 @@ public class ImagenFondo extends JComponent{
             piso= pisoSeleccionado;
             String imagen="";
             switch(piso){
-                case 0: imagen="C:/Users/USUARIO/Documents/NetBeansProjects/tpIA/src/imagen/FRSF Planta Baja 12k.png";
+                case 0: imagen="C:/Users/USUARIO/Documents/NetBeansProjects/tpIA/src/imagen/Planos-Facu-Piso-0.png";
                         break;
                 case 1: imagen="C:/Users/USUARIO/Documents/NetBeansProjects/tpIA/src/imagen/FRSF Piso 1 12k.png";
                         break;
@@ -324,6 +310,7 @@ public class ImagenFondo extends JComponent{
      }
 
      public ArrayList vaciarListaRecorrido() {
+         nodoClickeado=null;
          ArrayList retornar= (ArrayList) listaRecorrido.clone();
          this.instanciarListaRecorrido();
          return retornar;

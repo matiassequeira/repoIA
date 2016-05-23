@@ -1,60 +1,1134 @@
 digraph g {
 node [shape = Mrecord];
 nodo0[label="{EO: 0|cost: 0.0|A: null}"]
-nodo1[label="{EO: 1|cost: 33.45362404707371|A: UsarEscalera}"]
-nodo4[label="{EO: 4|cost: 66.14220158752323|A: IrSur|Posicion\nagente:ESCALERACERCAANEXO\n\nEn\nel\npunto:\n136\n66\n2
+nodo1[label="{EO: 1|cost: 10.0|A: IrSur}"]
+nodo5[label="{EO: 5|cost: 10.0|A: UsarEscalera|Posicion\nagente:ESCALERACERCAJAVALAB\n\nEn\nel\npunto:\n128\n64\n2
 Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
-Energia\ndisponible:143.55506573143953
+Energia\ndisponible:290.0
+}"]
+nodo10[label="{EO: 10|cost: 20.0|A: IrOeste|Posicion\nagente:ESCALERACECOVI\n\nEn\nel\npunto:\n122\n64\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo15[label="{EO: 15|cost: 30.0|A: IrSur|Posicion\nagente:PUNTOCERCACECOVI\n\nEn\nel\npunto:\n121\n66\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo26[label="{EO: 26|cost: 40.0|A: IrEste|Posicion\nagente:PUNTOCERCADEPTOCIVIL\n\nEn\nel\npunto:\n112\n66\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo48[label="{EO: 48|cost: 50.0|A: IrSur|Posicion\nagente:PUNTOCERCAAULA20\n\nEn\nel\npunto:\n112\n61\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo88[label="{EO: 88|cost: 60.0|A: IrEste|Posicion\nagente:PASILLOSALAESTUDIOBASICAS\n\nEn\nel\npunto:\n107\n60\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo143[label="{EO: 143|cost: 70.0|A: IrEste|Posicion\nagente:PASILLOSALAESTUDIOBASICAS\n\nEn\nel\npunto:\n107\n56\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
 }"]
 
-nodo1 -> nodo4;
-nodo5[label="{EO: 5|cost: 67.80632414148103|A: IrNoreste|Posicion\nagente:ESCALERACERCAANEXO\n\nEn\nel\npunto:\n136\n66\n2
+nodo88 -> nodo143;
+
+nodo48 -> nodo88;
+
+nodo26 -> nodo48;
+nodo49[label="{EO: 49|cost: 50.0|A: IrNorte|Posicion\nagente:PUNTOCERCAAULA20\n\nEn\nel\npunto:\n112\n61\n1
 Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
-Energia\ndisponible:143.55506573143953
+Energia\ndisponible:290.0
 }"]
+nodo89[label="{EO: 89|cost: 60.0|A: IrNorte|Posicion\nagente:PUNTOFRENTEAULA20\n\nEn\nel\npunto:\n117\n61\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo49 -> nodo89;
+nodo90[label="{EO: 90|cost: 60.0|A: IrNoreste|Posicion\nagente:PUNTOFRENTEAULA20\n\nEn\nel\npunto:\n117\n61\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo49 -> nodo90;
+
+nodo26 -> nodo49;
+nodo50[label="{EO: 50|cost: 50.0|A: IrNoreste|Posicion\nagente:PUNTOCERCAAULA20\n\nEn\nel\npunto:\n112\n61\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo91[label="{EO: 91|cost: 50.0|A: UsarEscalera|Posicion\nagente:ESCALERACERCAAULA20\n\nEn\nel\npunto:\n113\n60\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo139[label="{EO: 139|cost: 60.0|A: IrSur|Posicion\nagente:ESCALERADEPTOMECANICA\n\nEn\nel\npunto:\n113\n61\n0
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo91 -> nodo139;
+
+nodo50 -> nodo91;
+
+nodo26 -> nodo50;
+
+nodo15 -> nodo26;
+nodo27[label="{EO: 27|cost: 40.0|A: IrOeste|Posicion\nagente:PUNTOCERCADEPTOCIVIL\n\nEn\nel\npunto:\n112\n66\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo51[label="{EO: 51|cost: 50.0|A: IrOeste|Posicion\nagente:DEPTOCIVIL\n\nEn\nel\npunto:\n111\n71\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo92[label="{EO: 92|cost: 60.0|A: IrOeste|Posicion\nagente:PASILLODEPTOCIVIL\n\nEn\nel\npunto:\n112\n78\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo144[label="{EO: 144|cost: 70.0|A: IrNorte|Posicion\nagente:PUNTOENTREDEPTOCIVILEINDUSTRIAL\n\nEn\nel\npunto:\n112\n84\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo92 -> nodo144;
+nodo145[label="{EO: 145|cost: 70.0|A: IrSuroeste|Posicion\nagente:PUNTOENTREDEPTOCIVILEINDUSTRIAL\n\nEn\nel\npunto:\n112\n84\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo92 -> nodo145;
+
+nodo51 -> nodo92;
+
+nodo27 -> nodo51;
+
+nodo15 -> nodo27;
+
+nodo10 -> nodo15;
+nodo16[label="{EO: 16|cost: 30.0|A: IrNorte|Posicion\nagente:PUNTOCERCACECOVI\n\nEn\nel\npunto:\n121\n66\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo28[label="{EO: 28|cost: 40.0|A: IrEste|Posicion\nagente:PUNTOCERCAAULAMATERIALES\n\nEn\nel\npunto:\n136\n65\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo52[label="{EO: 52|cost: 50.0|A: IrEste|Posicion\nagente:PUNTOCERCAAULAMATERIALES\n\nEn\nel\npunto:\n136\n61\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo93[label="{EO: 93|cost: 60.0|A: IrEste|Posicion\nagente:PUNTOPASILLOCERCAGIMNI\n\nEn\nel\npunto:\n136\n54\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo146[label="{EO: 146|cost: 70.0|A: IrSur|Posicion\nagente:PUNTOCERCAAULA19\n\nEn\nel\npunto:\n136\n48\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo93 -> nodo146;
+nodo147[label="{EO: 147|cost: 70.0|A: IrNoroeste|Posicion\nagente:PUNTOCERCAAULA19\n\nEn\nel\npunto:\n136\n48\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo93 -> nodo147;
+
+nodo52 -> nodo93;
+
+nodo28 -> nodo52;
+nodo53[label="{EO: 53|cost: 50.0|A: IrNoroeste|Posicion\nagente:PUNTOCERCAAULAMATERIALES\n\nEn\nel\npunto:\n136\n61\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo94[label="{EO: 94|cost: 60.0|A: IrSur|Posicion\nagente:AULAMATERIALES\n\nEn\nel\npunto:\n138\n63\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo148[label="{EO: 148|cost: 70.0|A: IrSuroeste|Posicion\nagente:SANITARIOSCERCACECOVI\n\nEn\nel\npunto:\n131\n63\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo94 -> nodo148;
+
+nodo53 -> nodo94;
+
+nodo28 -> nodo53;
+
+nodo16 -> nodo28;
+nodo29[label="{EO: 29|cost: 40.0|A: IrNoroeste|Posicion\nagente:PUNTOCERCAAULAMATERIALES\n\nEn\nel\npunto:\n136\n65\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo54[label="{EO: 54|cost: 50.0|A: IrSur|Posicion\nagente:AULAMATERIALES\n\nEn\nel\npunto:\n138\n63\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo95[label="{EO: 95|cost: 60.0|A: IrSuroeste|Posicion\nagente:SANITARIOSCERCACECOVI\n\nEn\nel\npunto:\n131\n63\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo149[label="{EO: 149|cost: 60.0|A: UsarEscalera|Posicion\nagente:ESCALERACECOVI\n\nEn\nel\npunto:\n128\n64\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo95 -> nodo149;
+
+nodo54 -> nodo95;
+
+nodo29 -> nodo54;
+nodo55[label="{EO: 55|cost: 50.0|A: IrSureste|Posicion\nagente:AULAMATERIALES\n\nEn\nel\npunto:\n138\n63\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo96[label="{EO: 96|cost: 60.0|A: IrEste|Posicion\nagente:PUNTOCERCAAULAMATERIALES\n\nEn\nel\npunto:\n136\n61\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo150[label="{EO: 150|cost: 70.0|A: IrEste|Posicion\nagente:PUNTOPASILLOCERCAGIMNI\n\nEn\nel\npunto:\n136\n54\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo96 -> nodo150;
+
+nodo55 -> nodo96;
+
+nodo29 -> nodo55;
+
+nodo16 -> nodo29;
+
+nodo10 -> nodo16;
+nodo17[label="{EO: 17|cost: 30.0|A: IrNoreste|Posicion\nagente:PUNTOCERCACECOVI\n\nEn\nel\npunto:\n121\n66\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo30[label="{EO: 30|cost: 30.0|A: UsarEscalera|Posicion\nagente:ESCALERACECOVI\n\nEn\nel\npunto:\n128\n64\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo45[label="{EO: 45|cost: 40.0|A: IrSur|Posicion\nagente:ESCALERADEPTOELECTRICA\n\nEn\nel\npunto:\n121\n63\n0
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo79[label="{EO: 79|cost: 50.0|A: IrSur|Posicion\nagente:ENTRADADEPTOELECTRICA\n\nEn\nel\npunto:\n118\n63\n0
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo128[label="{EO: 128|cost: 60.0|A: IrSur|Posicion\nagente:PASILLOPATIOPALMERAS\n\nEn\nel\npunto:\n111\n63\n0
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo79 -> nodo128;
+nodo129[label="{EO: 129|cost: 60.0|A: IrOeste|Posicion\nagente:PASILLOPATIOPALMERAS\n\nEn\nel\npunto:\n111\n63\n0
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo79 -> nodo129;
+
+nodo45 -> nodo79;
+nodo80[label="{EO: 80|cost: 50.0|A: IrNoroeste|Posicion\nagente:ENTRADADEPTOELECTRICA\n\nEn\nel\npunto:\n118\n63\n0
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo45 -> nodo80;
+
+nodo30 -> nodo45;
+nodo46[label="{EO: 46|cost: 40.0|A: IrOeste|Posicion\nagente:ESCALERADEPTOELECTRICA\n\nEn\nel\npunto:\n121\n63\n0
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo81[label="{EO: 81|cost: 50.0|A: IrSureste|Posicion\nagente:DEPTOELECTRICA\n\nEn\nel\npunto:\n121\n66\n0
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo130[label="{EO: 130|cost: 60.0|A: IrSur|Posicion\nagente:ENTRADADEPTOELECTRICA\n\nEn\nel\npunto:\n118\n63\n0
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo81 -> nodo130;
+
+nodo46 -> nodo81;
+
+nodo30 -> nodo46;
+
+nodo17 -> nodo30;
+nodo31[label="{EO: 31|cost: 40.0|A: IrNoreste|Posicion\nagente:ESCALERACECOVI\n\nEn\nel\npunto:\n128\n64\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo56[label="{EO: 56|cost: 50.0|A: IrNorte|Posicion\nagente:SANITARIOSCERCACECOVI\n\nEn\nel\npunto:\n131\n63\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo97[label="{EO: 97|cost: 60.0|A: IrSureste|Posicion\nagente:AULAMATERIALES\n\nEn\nel\npunto:\n138\n63\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo151[label="{EO: 151|cost: 70.0|A: IrEste|Posicion\nagente:PUNTOCERCAAULAMATERIALES\n\nEn\nel\npunto:\n136\n61\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo97 -> nodo151;
+nodo152[label="{EO: 152|cost: 70.0|A: IrOeste|Posicion\nagente:PUNTOCERCAAULAMATERIALES\n\nEn\nel\npunto:\n136\n61\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo97 -> nodo152;
+
+nodo56 -> nodo97;
+
+nodo31 -> nodo56;
+
+nodo17 -> nodo31;
+
+nodo10 -> nodo17;
+
+nodo5 -> nodo10;
+nodo11[label="{EO: 11|cost: 20.0|A: IrSuroeste|Posicion\nagente:ESCALERACECOVI\n\nEn\nel\npunto:\n122\n64\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo18[label="{EO: 18|cost: 30.0|A: IrEste|Posicion\nagente:PUNTOCERCADEPTOCIVIL\n\nEn\nel\npunto:\n112\n66\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo32[label="{EO: 32|cost: 40.0|A: IrSur|Posicion\nagente:PUNTOCERCAAULA20\n\nEn\nel\npunto:\n112\n61\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo57[label="{EO: 57|cost: 50.0|A: IrEste|Posicion\nagente:PASILLOSALAESTUDIOBASICAS\n\nEn\nel\npunto:\n107\n60\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo98[label="{EO: 98|cost: 60.0|A: IrEste|Posicion\nagente:PASILLOSALAESTUDIOBASICAS\n\nEn\nel\npunto:\n107\n56\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo153[label="{EO: 153|cost: 70.0|A: IrSur|Posicion\nagente:PUNTOCERCATOTORIAB3\n\nEn\nel\npunto:\n107\n48\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo98 -> nodo153;
+nodo154[label="{EO: 154|cost: 70.0|A: IrEste|Posicion\nagente:PUNTOCERCATOTORIAB3\n\nEn\nel\npunto:\n107\n48\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo98 -> nodo154;
+
+nodo57 -> nodo98;
+
+nodo32 -> nodo57;
+
+nodo18 -> nodo32;
+nodo33[label="{EO: 33|cost: 40.0|A: IrNorte|Posicion\nagente:PUNTOCERCAAULA20\n\nEn\nel\npunto:\n112\n61\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo58[label="{EO: 58|cost: 50.0|A: IrNorte|Posicion\nagente:PUNTOFRENTEAULA20\n\nEn\nel\npunto:\n117\n61\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo33 -> nodo58;
+nodo59[label="{EO: 59|cost: 50.0|A: IrNoreste|Posicion\nagente:PUNTOFRENTEAULA20\n\nEn\nel\npunto:\n117\n61\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo33 -> nodo59;
+
+nodo18 -> nodo33;
+nodo34[label="{EO: 34|cost: 40.0|A: IrNoreste|Posicion\nagente:PUNTOCERCAAULA20\n\nEn\nel\npunto:\n112\n61\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo60[label="{EO: 60|cost: 40.0|A: UsarEscalera|Posicion\nagente:ESCALERACERCAAULA20\n\nEn\nel\npunto:\n113\n60\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo83[label="{EO: 83|cost: 50.0|A: IrSur|Posicion\nagente:ESCALERADEPTOMECANICA\n\nEn\nel\npunto:\n113\n61\n0
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo132[label="{EO: 132|cost: 60.0|A: IrEste|Posicion\nagente:PASILLODEPTOMECANICA\n\nEn\nel\npunto:\n111\n61\n0
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo83 -> nodo132;
+
+nodo60 -> nodo83;
+
+nodo34 -> nodo60;
+
+nodo18 -> nodo34;
+
+nodo11 -> nodo18;
+nodo19[label="{EO: 19|cost: 30.0|A: IrNorte|Posicion\nagente:PUNTOCERCADEPTOCIVIL\n\nEn\nel\npunto:\n112\n66\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo35[label="{EO: 35|cost: 40.0|A: IrNorte|Posicion\nagente:PUNTOCERCACECOVI\n\nEn\nel\npunto:\n121\n66\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo61[label="{EO: 61|cost: 50.0|A: IrEste|Posicion\nagente:PUNTOCERCAAULAMATERIALES\n\nEn\nel\npunto:\n136\n65\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo99[label="{EO: 99|cost: 60.0|A: IrEste|Posicion\nagente:PUNTOCERCAAULAMATERIALES\n\nEn\nel\npunto:\n136\n61\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo155[label="{EO: 155|cost: 70.0|A: IrEste|Posicion\nagente:PUNTOPASILLOCERCAGIMNI\n\nEn\nel\npunto:\n136\n54\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo99 -> nodo155;
+
+nodo61 -> nodo99;
+nodo100[label="{EO: 100|cost: 60.0|A: IrNoroeste|Posicion\nagente:PUNTOCERCAAULAMATERIALES\n\nEn\nel\npunto:\n136\n61\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo156[label="{EO: 156|cost: 70.0|A: IrSur|Posicion\nagente:AULAMATERIALES\n\nEn\nel\npunto:\n138\n63\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo100 -> nodo156;
+
+nodo61 -> nodo100;
+
+nodo35 -> nodo61;
+nodo62[label="{EO: 62|cost: 50.0|A: IrNoroeste|Posicion\nagente:PUNTOCERCAAULAMATERIALES\n\nEn\nel\npunto:\n136\n65\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo101[label="{EO: 101|cost: 60.0|A: IrSur|Posicion\nagente:AULAMATERIALES\n\nEn\nel\npunto:\n138\n63\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo157[label="{EO: 157|cost: 70.0|A: IrSuroeste|Posicion\nagente:SANITARIOSCERCACECOVI\n\nEn\nel\npunto:\n131\n63\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo101 -> nodo157;
+
+nodo62 -> nodo101;
+nodo102[label="{EO: 102|cost: 60.0|A: IrSureste|Posicion\nagente:AULAMATERIALES\n\nEn\nel\npunto:\n138\n63\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo158[label="{EO: 158|cost: 70.0|A: IrEste|Posicion\nagente:PUNTOCERCAAULAMATERIALES\n\nEn\nel\npunto:\n136\n61\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo102 -> nodo158;
+
+nodo62 -> nodo102;
+
+nodo35 -> nodo62;
+
+nodo19 -> nodo35;
+nodo36[label="{EO: 36|cost: 40.0|A: IrNoreste|Posicion\nagente:PUNTOCERCACECOVI\n\nEn\nel\npunto:\n121\n66\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo63[label="{EO: 63|cost: 40.0|A: UsarEscalera|Posicion\nagente:ESCALERACECOVI\n\nEn\nel\npunto:\n128\n64\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo84[label="{EO: 84|cost: 50.0|A: IrSur|Posicion\nagente:ESCALERADEPTOELECTRICA\n\nEn\nel\npunto:\n121\n63\n0
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo133[label="{EO: 133|cost: 60.0|A: IrSur|Posicion\nagente:ENTRADADEPTOELECTRICA\n\nEn\nel\npunto:\n118\n63\n0
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo84 -> nodo133;
+nodo134[label="{EO: 134|cost: 60.0|A: IrNoroeste|Posicion\nagente:ENTRADADEPTOELECTRICA\n\nEn\nel\npunto:\n118\n63\n0
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo84 -> nodo134;
+
+nodo63 -> nodo84;
+nodo85[label="{EO: 85|cost: 50.0|A: IrOeste|Posicion\nagente:ESCALERADEPTOELECTRICA\n\nEn\nel\npunto:\n121\n63\n0
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo135[label="{EO: 135|cost: 60.0|A: IrSureste|Posicion\nagente:DEPTOELECTRICA\n\nEn\nel\npunto:\n121\n66\n0
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo85 -> nodo135;
+
+nodo63 -> nodo85;
+
+nodo36 -> nodo63;
+nodo64[label="{EO: 64|cost: 50.0|A: IrNoreste|Posicion\nagente:ESCALERACECOVI\n\nEn\nel\npunto:\n128\n64\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo103[label="{EO: 103|cost: 60.0|A: IrNorte|Posicion\nagente:SANITARIOSCERCACECOVI\n\nEn\nel\npunto:\n131\n63\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo159[label="{EO: 159|cost: 70.0|A: IrSureste|Posicion\nagente:AULAMATERIALES\n\nEn\nel\npunto:\n138\n63\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo103 -> nodo159;
+
+nodo64 -> nodo103;
+
+nodo36 -> nodo64;
+
+nodo19 -> nodo36;
+
+nodo11 -> nodo19;
+nodo20[label="{EO: 20|cost: 30.0|A: IrOeste|Posicion\nagente:PUNTOCERCADEPTOCIVIL\n\nEn\nel\npunto:\n112\n66\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo37[label="{EO: 37|cost: 40.0|A: IrOeste|Posicion\nagente:DEPTOCIVIL\n\nEn\nel\npunto:\n111\n71\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo65[label="{EO: 65|cost: 50.0|A: IrOeste|Posicion\nagente:PASILLODEPTOCIVIL\n\nEn\nel\npunto:\n112\n78\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo104[label="{EO: 104|cost: 60.0|A: IrNorte|Posicion\nagente:PUNTOENTREDEPTOCIVILEINDUSTRIAL\n\nEn\nel\npunto:\n112\n84\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo160[label="{EO: 160|cost: 70.0|A: UtilizarAscensorAPiso2|Posicion\nagente:ASCENSOR1PISO\n\nEn\nel\npunto:\n114\n84\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo104 -> nodo160;
+nodo161[label="{EO: 161|cost: 70.0|A: UtilizarAscensorAPiso2|Posicion\nagente:ASCENSOR1PISO\n\nEn\nel\npunto:\n114\n84\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo104 -> nodo161;
+nodo162[label="{EO: 162|cost: 70.0|A: UtilizarAscensorAPiso3|Posicion\nagente:ASCENSOR1PISO\n\nEn\nel\npunto:\n114\n84\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo104 -> nodo162;
+nodo163[label="{EO: 163|cost: 70.0|A: IrNoroeste|Posicion\nagente:ASCENSOR1PISO\n\nEn\nel\npunto:\n114\n84\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo104 -> nodo163;
+
+nodo65 -> nodo104;
+nodo105[label="{EO: 105|cost: 60.0|A: IrSuroeste|Posicion\nagente:PUNTOENTREDEPTOCIVILEINDUSTRIAL\n\nEn\nel\npunto:\n112\n84\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo164[label="{EO: 164|cost: 70.0|A: IrSur|Posicion\nagente:PUNTOPASILLOSALAESTUDIOPOSGRADO\n\nEn\nel\npunto:\n103\n86\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo105 -> nodo164;
+nodo165[label="{EO: 165|cost: 70.0|A: IrNorte|Posicion\nagente:PUNTOPASILLOSALAESTUDIOPOSGRADO\n\nEn\nel\npunto:\n103\n86\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo105 -> nodo165;
+nodo166[label="{EO: 166|cost: 70.0|A: IrNoroeste|Posicion\nagente:PUNTOPASILLOSALAESTUDIOPOSGRADO\n\nEn\nel\npunto:\n103\n86\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo105 -> nodo166;
+
+nodo65 -> nodo105;
+
+nodo37 -> nodo65;
+
+nodo20 -> nodo37;
+
+nodo11 -> nodo20;
+
+nodo5 -> nodo11;
 
 nodo1 -> nodo5;
-nodo6[label="{EO: 6|cost: 68.25227263402245|A: IrNoroeste|Posicion\nagente:ESCALERACERCAANEXO\n\nEn\nel\npunto:\n136\n66\n2
+nodo6[label="{EO: 6|cost: 20.0|A: IrEste|Posicion\nagente:ESCALERACERCAJAVALAB\n\nEn\nel\npunto:\n128\n64\n2
 Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
-Energia\ndisponible:143.55506573143953
+Energia\ndisponible:290.0
 }"]
 
 nodo1 -> nodo6;
 
 nodo0 -> nodo1;
-nodo2[label="{EO: 2|cost: 29.219544457292887|A: IrSur}"]
-nodo3[label="{EO: 3|cost: 41.29061226915836|A: IrEste|Posicion\nagente:PUNTOCERCAESCALERAANEXO\n\nEn\nel\npunto:\n131\n66\n3
+nodo2[label="{EO: 2|cost: 10.0|A: IrNorte}"]
+nodo7[label="{EO: 7|cost: 20.0|A: IrNorte|Posicion\nagente:PUNTOCERCAAULA22\n\nEn\nel\npunto:\n136\n64\n2
 Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
-Energia\ndisponible:143.55506573143953
+Energia\ndisponible:290.0
 }"]
-nodo7[label="{EO: 7|cost: 52.526680246658145|A: IrSur|Posicion\nagente:PUNTOPASILLODEPTOISI\n\nEn\nel\npunto:\n131\n61\n3
+nodo12[label="{EO: 12|cost: 30.0|A: IrOeste|Posicion\nagente:AULA22\n\nEn\nel\npunto:\n138\n63\n2
 Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
-Energia\ndisponible:143.55506573143953
+Energia\ndisponible:290.0
+}"]
+nodo23[label="{EO: 23|cost: 40.0|A: IrSureste|Posicion\nagente:ANEXOISI\n\nEn\nel\npunto:\n137\n67\n2
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo47[label="{EO: 47|cost: 40.0|A: UsarEscalera|Posicion\nagente:ESCALERACERCAANEXO\n\nEn\nel\npunto:\n136\n66\n2
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo82[label="{EO: 82|cost: 50.0|A: IrSur|Posicion\nagente:ESCALERACERCAANEXO\n\nEn\nel\npunto:\n133\n66\n3
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo131[label="{EO: 131|cost: 60.0|A: IrEste|Posicion\nagente:PUNTOCERCAESCALERAANEXO\n\nEn\nel\npunto:\n131\n66\n3
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
 }"]
 
-nodo3 -> nodo7;
-nodo8[label="{EO: 8|cost: 64.32390864753127|A: IrNorte|Posicion\nagente:PUNTOPASILLODEPTOISI\n\nEn\nel\npunto:\n131\n61\n3
+nodo82 -> nodo131;
+
+nodo47 -> nodo82;
+
+nodo23 -> nodo47;
+
+nodo12 -> nodo23;
+
+nodo7 -> nodo12;
+nodo13[label="{EO: 13|cost: 30.0|A: IrSuroeste|Posicion\nagente:AULA22\n\nEn\nel\npunto:\n138\n63\n2
 Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
-Energia\ndisponible:143.55506573143953
+Energia\ndisponible:290.0
+}"]
+nodo24[label="{EO: 24|cost: 30.0|A: UsarEscalera|Posicion\nagente:ESCALERACERCAANEXO\n\nEn\nel\npunto:\n136\n66\n2
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo44[label="{EO: 44|cost: 40.0|A: IrSur|Posicion\nagente:ESCALERACERCAANEXO\n\nEn\nel\npunto:\n133\n66\n3
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo78[label="{EO: 78|cost: 50.0|A: IrEste|Posicion\nagente:PUNTOCERCAESCALERAANEXO\n\nEn\nel\npunto:\n131\n66\n3
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo124[label="{EO: 124|cost: 60.0|A: IrSur|Posicion\nagente:PUNTOPASILLODEPTOISI\n\nEn\nel\npunto:\n131\n61\n3
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo185[label="{EO: 185|cost: 70.0|A: IrSur|Posicion\nagente:PUNTOPASILLOCERCACIDISI\n\nEn\nel\npunto:\n122\n61\n3
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo124 -> nodo185;
+nodo186[label="{EO: 186|cost: 70.0|A: IrOeste|Posicion\nagente:PUNTOPASILLOCERCACIDISI\n\nEn\nel\npunto:\n122\n61\n3
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo124 -> nodo186;
+nodo187[label="{EO: 187|cost: 70.0|A: IrNoreste|Posicion\nagente:PUNTOPASILLOCERCACIDISI\n\nEn\nel\npunto:\n122\n61\n3
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo124 -> nodo187;
+
+nodo78 -> nodo124;
+nodo125[label="{EO: 125|cost: 60.0|A: IrNorte|Posicion\nagente:PUNTOPASILLODEPTOISI\n\nEn\nel\npunto:\n131\n61\n3
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo188[label="{EO: 188|cost: 70.0|A: IrNorte|Posicion\nagente:PUNTOPASILLODEPTOISI\n\nEn\nel\npunto:\n139\n61\n3
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo125 -> nodo188;
+nodo189[label="{EO: 189|cost: 70.0|A: IrSureste|Posicion\nagente:PUNTOPASILLODEPTOISI\n\nEn\nel\npunto:\n139\n61\n3
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo125 -> nodo189;
+nodo190[label="{EO: 190|cost: 70.0|A: IrNoreste|Posicion\nagente:PUNTOPASILLODEPTOISI\n\nEn\nel\npunto:\n139\n61\n3
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo125 -> nodo190;
+
+nodo78 -> nodo125;
+nodo126[label="{EO: 126|cost: 60.0|A: IrSureste|Posicion\nagente:PUNTOPASILLODEPTOISI\n\nEn\nel\npunto:\n131\n61\n3
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo78 -> nodo126;
+nodo127[label="{EO: 127|cost: 60.0|A: IrNoreste|Posicion\nagente:PUNTOPASILLODEPTOISI\n\nEn\nel\npunto:\n131\n61\n3
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo78 -> nodo127;
+
+nodo44 -> nodo78;
+
+nodo24 -> nodo44;
+
+nodo13 -> nodo24;
+nodo25[label="{EO: 25|cost: 40.0|A: IrNoroeste|Posicion\nagente:ESCALERACERCAANEXO\n\nEn\nel\npunto:\n136\n66\n2
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo13 -> nodo25;
+
+nodo7 -> nodo13;
+
+nodo2 -> nodo7;
+
+nodo0 -> nodo2;
+nodo3[label="{EO: 3|cost: 10.0|A: IrOeste}"]
+nodo8[label="{EO: 8|cost: 20.0|A: IrOeste|Posicion\nagente:PASILLOAULA21\n\nEn\nel\npunto:\n132\n70\n2
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
 }"]
 
 nodo3 -> nodo8;
-nodo9[label="{EO: 9|cost: 48.361680081023835|A: IrSureste|Posicion\nagente:PUNTOPASILLODEPTOISI\n\nEn\nel\npunto:\n131\n61\n3
+
+nodo0 -> nodo3;
+nodo4[label="{EO: 4|cost: 10.0|A: IrSureste}"]
+nodo9[label="{EO: 9|cost: 20.0|A: IrOeste|Posicion\nagente:JAVALAB\n\nEn\nel\npunto:\n128\n63\n2
 Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
-Energia\ndisponible:143.55506573143953
+Energia\ndisponible:290.0
+}"]
+nodo14[label="{EO: 14|cost: 20.0|A: UsarEscalera|Posicion\nagente:ESCALERACERCAJAVALAB\n\nEn\nel\npunto:\n128\n64\n2
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo21[label="{EO: 21|cost: 30.0|A: IrOeste|Posicion\nagente:ESCALERACECOVI\n\nEn\nel\npunto:\n122\n64\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo38[label="{EO: 38|cost: 40.0|A: IrSur|Posicion\nagente:PUNTOCERCACECOVI\n\nEn\nel\npunto:\n121\n66\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo66[label="{EO: 66|cost: 50.0|A: IrEste|Posicion\nagente:PUNTOCERCADEPTOCIVIL\n\nEn\nel\npunto:\n112\n66\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo106[label="{EO: 106|cost: 60.0|A: IrSur|Posicion\nagente:PUNTOCERCAAULA20\n\nEn\nel\npunto:\n112\n61\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo167[label="{EO: 167|cost: 70.0|A: IrEste|Posicion\nagente:PASILLOSALAESTUDIOBASICAS\n\nEn\nel\npunto:\n107\n60\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
 }"]
 
-nodo3 -> nodo9;
-nodo10[label="{EO: 10|cost: 54.94603916574324|A: IrNoreste|Posicion\nagente:PUNTOPASILLODEPTOISI\n\nEn\nel\npunto:\n131\n61\n3
+nodo106 -> nodo167;
+
+nodo66 -> nodo106;
+nodo107[label="{EO: 107|cost: 60.0|A: IrNorte|Posicion\nagente:PUNTOCERCAAULA20\n\nEn\nel\npunto:\n112\n61\n1
 Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
-Energia\ndisponible:143.55506573143953
+Energia\ndisponible:290.0
+}"]
+nodo168[label="{EO: 168|cost: 70.0|A: IrNorte|Posicion\nagente:PUNTOFRENTEAULA20\n\nEn\nel\npunto:\n117\n61\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
 }"]
 
-nodo3 -> nodo10;
+nodo107 -> nodo168;
+nodo169[label="{EO: 169|cost: 70.0|A: IrNoreste|Posicion\nagente:PUNTOFRENTEAULA20\n\nEn\nel\npunto:\n117\n61\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
 
-nodo2 -> nodo3;
+nodo107 -> nodo169;
 
-nodo0 -> nodo2;
+nodo66 -> nodo107;
+nodo108[label="{EO: 108|cost: 60.0|A: IrNoreste|Posicion\nagente:PUNTOCERCAAULA20\n\nEn\nel\npunto:\n112\n61\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo170[label="{EO: 170|cost: 60.0|A: UsarEscalera|Posicion\nagente:ESCALERACERCAAULA20\n\nEn\nel\npunto:\n113\n60\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo108 -> nodo170;
+
+nodo66 -> nodo108;
+
+nodo38 -> nodo66;
+nodo67[label="{EO: 67|cost: 50.0|A: IrOeste|Posicion\nagente:PUNTOCERCADEPTOCIVIL\n\nEn\nel\npunto:\n112\n66\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo109[label="{EO: 109|cost: 60.0|A: IrOeste|Posicion\nagente:DEPTOCIVIL\n\nEn\nel\npunto:\n111\n71\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo171[label="{EO: 171|cost: 70.0|A: IrOeste|Posicion\nagente:PASILLODEPTOCIVIL\n\nEn\nel\npunto:\n112\n78\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo109 -> nodo171;
+
+nodo67 -> nodo109;
+
+nodo38 -> nodo67;
+
+nodo21 -> nodo38;
+nodo39[label="{EO: 39|cost: 40.0|A: IrNorte|Posicion\nagente:PUNTOCERCACECOVI\n\nEn\nel\npunto:\n121\n66\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo68[label="{EO: 68|cost: 50.0|A: IrEste|Posicion\nagente:PUNTOCERCAAULAMATERIALES\n\nEn\nel\npunto:\n136\n65\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo110[label="{EO: 110|cost: 60.0|A: IrEste|Posicion\nagente:PUNTOCERCAAULAMATERIALES\n\nEn\nel\npunto:\n136\n61\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo172[label="{EO: 172|cost: 70.0|A: IrEste|Posicion\nagente:PUNTOPASILLOCERCAGIMNI\n\nEn\nel\npunto:\n136\n54\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo110 -> nodo172;
+
+nodo68 -> nodo110;
+nodo111[label="{EO: 111|cost: 60.0|A: IrNoroeste|Posicion\nagente:PUNTOCERCAAULAMATERIALES\n\nEn\nel\npunto:\n136\n61\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo173[label="{EO: 173|cost: 70.0|A: IrSur|Posicion\nagente:AULAMATERIALES\n\nEn\nel\npunto:\n138\n63\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo111 -> nodo173;
+
+nodo68 -> nodo111;
+
+nodo39 -> nodo68;
+nodo69[label="{EO: 69|cost: 50.0|A: IrNoroeste|Posicion\nagente:PUNTOCERCAAULAMATERIALES\n\nEn\nel\npunto:\n136\n65\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo112[label="{EO: 112|cost: 60.0|A: IrSur|Posicion\nagente:AULAMATERIALES\n\nEn\nel\npunto:\n138\n63\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo174[label="{EO: 174|cost: 70.0|A: IrSuroeste|Posicion\nagente:SANITARIOSCERCACECOVI\n\nEn\nel\npunto:\n131\n63\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo112 -> nodo174;
+
+nodo69 -> nodo112;
+nodo113[label="{EO: 113|cost: 60.0|A: IrSureste|Posicion\nagente:AULAMATERIALES\n\nEn\nel\npunto:\n138\n63\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo175[label="{EO: 175|cost: 70.0|A: IrEste|Posicion\nagente:PUNTOCERCAAULAMATERIALES\n\nEn\nel\npunto:\n136\n61\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo113 -> nodo175;
+
+nodo69 -> nodo113;
+
+nodo39 -> nodo69;
+
+nodo21 -> nodo39;
+nodo40[label="{EO: 40|cost: 40.0|A: IrNoreste|Posicion\nagente:PUNTOCERCACECOVI\n\nEn\nel\npunto:\n121\n66\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo70[label="{EO: 70|cost: 40.0|A: UsarEscalera|Posicion\nagente:ESCALERACECOVI\n\nEn\nel\npunto:\n128\n64\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo86[label="{EO: 86|cost: 50.0|A: IrSur|Posicion\nagente:ESCALERADEPTOELECTRICA\n\nEn\nel\npunto:\n121\n63\n0
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo136[label="{EO: 136|cost: 60.0|A: IrSur|Posicion\nagente:ENTRADADEPTOELECTRICA\n\nEn\nel\npunto:\n118\n63\n0
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo86 -> nodo136;
+nodo137[label="{EO: 137|cost: 60.0|A: IrNoroeste|Posicion\nagente:ENTRADADEPTOELECTRICA\n\nEn\nel\npunto:\n118\n63\n0
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo86 -> nodo137;
+
+nodo70 -> nodo86;
+nodo87[label="{EO: 87|cost: 50.0|A: IrOeste|Posicion\nagente:ESCALERADEPTOELECTRICA\n\nEn\nel\npunto:\n121\n63\n0
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo138[label="{EO: 138|cost: 60.0|A: IrSureste|Posicion\nagente:DEPTOELECTRICA\n\nEn\nel\npunto:\n121\n66\n0
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo87 -> nodo138;
+
+nodo70 -> nodo87;
+
+nodo40 -> nodo70;
+nodo71[label="{EO: 71|cost: 50.0|A: IrNoreste|Posicion\nagente:ESCALERACECOVI\n\nEn\nel\npunto:\n128\n64\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo114[label="{EO: 114|cost: 60.0|A: IrNorte|Posicion\nagente:SANITARIOSCERCACECOVI\n\nEn\nel\npunto:\n131\n63\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo176[label="{EO: 176|cost: 70.0|A: IrSureste|Posicion\nagente:AULAMATERIALES\n\nEn\nel\npunto:\n138\n63\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo114 -> nodo176;
+
+nodo71 -> nodo114;
+
+nodo40 -> nodo71;
+
+nodo21 -> nodo40;
+
+nodo14 -> nodo21;
+nodo22[label="{EO: 22|cost: 30.0|A: IrSuroeste|Posicion\nagente:ESCALERACECOVI\n\nEn\nel\npunto:\n122\n64\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo41[label="{EO: 41|cost: 40.0|A: IrEste|Posicion\nagente:PUNTOCERCADEPTOCIVIL\n\nEn\nel\npunto:\n112\n66\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo72[label="{EO: 72|cost: 50.0|A: IrSur|Posicion\nagente:PUNTOCERCAAULA20\n\nEn\nel\npunto:\n112\n61\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo115[label="{EO: 115|cost: 60.0|A: IrEste|Posicion\nagente:PASILLOSALAESTUDIOBASICAS\n\nEn\nel\npunto:\n107\n60\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo177[label="{EO: 177|cost: 70.0|A: IrEste|Posicion\nagente:PASILLOSALAESTUDIOBASICAS\n\nEn\nel\npunto:\n107\n56\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo115 -> nodo177;
+
+nodo72 -> nodo115;
+
+nodo41 -> nodo72;
+nodo73[label="{EO: 73|cost: 50.0|A: IrNorte|Posicion\nagente:PUNTOCERCAAULA20\n\nEn\nel\npunto:\n112\n61\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo116[label="{EO: 116|cost: 60.0|A: IrNorte|Posicion\nagente:PUNTOFRENTEAULA20\n\nEn\nel\npunto:\n117\n61\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo73 -> nodo116;
+nodo117[label="{EO: 117|cost: 60.0|A: IrNoreste|Posicion\nagente:PUNTOFRENTEAULA20\n\nEn\nel\npunto:\n117\n61\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo73 -> nodo117;
+
+nodo41 -> nodo73;
+nodo74[label="{EO: 74|cost: 50.0|A: IrNoreste|Posicion\nagente:PUNTOCERCAAULA20\n\nEn\nel\npunto:\n112\n61\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo118[label="{EO: 118|cost: 50.0|A: UsarEscalera|Posicion\nagente:ESCALERACERCAAULA20\n\nEn\nel\npunto:\n113\n60\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo140[label="{EO: 140|cost: 60.0|A: IrSur|Posicion\nagente:ESCALERADEPTOMECANICA\n\nEn\nel\npunto:\n113\n61\n0
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo118 -> nodo140;
+
+nodo74 -> nodo118;
+
+nodo41 -> nodo74;
+
+nodo22 -> nodo41;
+nodo42[label="{EO: 42|cost: 40.0|A: IrNorte|Posicion\nagente:PUNTOCERCADEPTOCIVIL\n\nEn\nel\npunto:\n112\n66\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo75[label="{EO: 75|cost: 50.0|A: IrNorte|Posicion\nagente:PUNTOCERCACECOVI\n\nEn\nel\npunto:\n121\n66\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo119[label="{EO: 119|cost: 60.0|A: IrEste|Posicion\nagente:PUNTOCERCAAULAMATERIALES\n\nEn\nel\npunto:\n136\n65\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo178[label="{EO: 178|cost: 70.0|A: IrEste|Posicion\nagente:PUNTOCERCAAULAMATERIALES\n\nEn\nel\npunto:\n136\n61\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo119 -> nodo178;
+nodo179[label="{EO: 179|cost: 70.0|A: IrNoroeste|Posicion\nagente:PUNTOCERCAAULAMATERIALES\n\nEn\nel\npunto:\n136\n61\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo119 -> nodo179;
+
+nodo75 -> nodo119;
+nodo120[label="{EO: 120|cost: 60.0|A: IrNoroeste|Posicion\nagente:PUNTOCERCAAULAMATERIALES\n\nEn\nel\npunto:\n136\n65\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo180[label="{EO: 180|cost: 70.0|A: IrSur|Posicion\nagente:AULAMATERIALES\n\nEn\nel\npunto:\n138\n63\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo120 -> nodo180;
+nodo181[label="{EO: 181|cost: 70.0|A: IrSureste|Posicion\nagente:AULAMATERIALES\n\nEn\nel\npunto:\n138\n63\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo120 -> nodo181;
+
+nodo75 -> nodo120;
+
+nodo42 -> nodo75;
+nodo76[label="{EO: 76|cost: 50.0|A: IrNoreste|Posicion\nagente:PUNTOCERCACECOVI\n\nEn\nel\npunto:\n121\n66\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo121[label="{EO: 121|cost: 50.0|A: UsarEscalera|Posicion\nagente:ESCALERACECOVI\n\nEn\nel\npunto:\n128\n64\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo141[label="{EO: 141|cost: 60.0|A: IrSur|Posicion\nagente:ESCALERADEPTOELECTRICA\n\nEn\nel\npunto:\n121\n63\n0
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo121 -> nodo141;
+nodo142[label="{EO: 142|cost: 60.0|A: IrOeste|Posicion\nagente:ESCALERADEPTOELECTRICA\n\nEn\nel\npunto:\n121\n63\n0
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo121 -> nodo142;
+
+nodo76 -> nodo121;
+nodo122[label="{EO: 122|cost: 60.0|A: IrNoreste|Posicion\nagente:ESCALERACECOVI\n\nEn\nel\npunto:\n128\n64\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo182[label="{EO: 182|cost: 70.0|A: IrNorte|Posicion\nagente:SANITARIOSCERCACECOVI\n\nEn\nel\npunto:\n131\n63\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo122 -> nodo182;
+
+nodo76 -> nodo122;
+
+nodo42 -> nodo76;
+
+nodo22 -> nodo42;
+nodo43[label="{EO: 43|cost: 40.0|A: IrOeste|Posicion\nagente:PUNTOCERCADEPTOCIVIL\n\nEn\nel\npunto:\n112\n66\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo77[label="{EO: 77|cost: 50.0|A: IrOeste|Posicion\nagente:DEPTOCIVIL\n\nEn\nel\npunto:\n111\n71\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo123[label="{EO: 123|cost: 60.0|A: IrOeste|Posicion\nagente:PASILLODEPTOCIVIL\n\nEn\nel\npunto:\n112\n78\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+nodo183[label="{EO: 183|cost: 70.0|A: IrNorte|Posicion\nagente:PUNTOENTREDEPTOCIVILEINDUSTRIAL\n\nEn\nel\npunto:\n112\n84\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo123 -> nodo183;
+nodo184[label="{EO: 184|cost: 70.0|A: IrSuroeste|Posicion\nagente:PUNTOENTREDEPTOCIVILEINDUSTRIAL\n\nEn\nel\npunto:\n112\n84\n1
+Destino:\nCIDISI\n\nEn\nel\npunto:\n124\n60\n3
+Energia\ndisponible:290.0
+}"]
+
+nodo123 -> nodo184;
+
+nodo77 -> nodo123;
+
+nodo43 -> nodo77;
+
+nodo22 -> nodo43;
+
+nodo14 -> nodo22;
+
+nodo9 -> nodo14;
+
+nodo4 -> nodo9;
+
+nodo0 -> nodo4;
 
 
 }

@@ -117,11 +117,21 @@ public class EstadoAgente extends SearchBasedAgentState {
         if (percepcion.isAscensorFueraServicio()){
         	//TODO buscar los ascensores en el mapa y ponerlos en fuera de servicio
         }
+        if(percepcion.getPosicionAgente()!=null){
+        Nodo nodoPosicion =percepcion.getPosicionAgente();
+        if(!nodoPosicion.getNodosAdyacentes().isEmpty()){
+            for(Nodo nodoAdyacente: percepcion.getPosicionAgente().getNodosAdyacentes()){
+                    mapa.get(nodoAdyacente.getUbicacion()).hayLuz(true);
+                    mapa.get(nodoAdyacente.getUbicacion()).hayObstaculo(false);
+                }
+        }
+        }
         if(!percepcion.getLuminosidadBajaNodosAdyacentes().isEmpty()){
         	for (Nodo nodoSinLuz : percepcion.getLuminosidadBajaNodosAdyacentes()) {
 				mapa.get(nodoSinLuz.getUbicacion()).hayLuz(false);
 			}
         }
+        
         if(!percepcion.getNodosAdyacentesConObstaculos().isEmpty()){
         	for (Nodo nodoConObstaculo : percepcion.getNodosAdyacentesConObstaculos()) {
         		Nodo nodoASetearObstaculo=mapa.get(nodoConObstaculo.getUbicacion());
@@ -131,6 +141,7 @@ public class EstadoAgente extends SearchBasedAgentState {
 			}
         }
         
+        
     }
 
     /**
@@ -139,7 +150,7 @@ public class EstadoAgente extends SearchBasedAgentState {
     @Override
     public void initState() {
      
-    	energiaDisponible= new Double(300);
+    	energiaDisponible= new Double(350);
     	hayEnergiaElectrica=true;
     	mapa = DatosMapa.cargarDatos();
       	posicion=DatosMapa.getPosicion();
@@ -274,7 +285,7 @@ public class EstadoAgente extends SearchBasedAgentState {
 	public void setEnergiaDisponibleConOperadorUsarEscalera(double arg) {
 		// TODO Auto-generated method stub
 		 if(searchStrategy==COSTO_UNIFORME)
-			 energiaDisponible-= ((NodoEscalera) this.getPosicion()).getCostoUsarEscalera()*10;
+			 energiaDisponible-= ((NodoEscalera) this.getPosicion()).getCostoUsarEscalera();
                 else
                          energiaDisponible=arg;
                  double e = energiaDisponible;

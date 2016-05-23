@@ -32,7 +32,7 @@ public class Facultad extends Environment {
 		
          perception.setAscensorFueraServicio(this.getEnvironmentState().getAscensoresFueraServicio());
          perception.setEnergiaElectrica(this.getEnvironmentState().getEnergiaElectrica());
-         
+         perception.setPosicionAgente(this.getEnvironmentState().getPosicionAgente());
          
          Nodo posicionAgente= this.getEnvironmentState().getPosicionAgente();
          List<Nodo> luminosidadBajaNodosAdyacentes= new ArrayList<Nodo>();

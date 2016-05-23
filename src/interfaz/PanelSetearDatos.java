@@ -150,11 +150,15 @@ public class PanelSetearDatos extends JPanel{
     private void jCheckBoxObstaculoActionPerformed(ActionEvent evt) {
         if(jCheckBoxHayObstaculo.isSelected())
             DatosMapa.addObstaculo(nodo);
+        else
+            DatosMapa.removeObstaculo(nodo);
         
     }
     private void jCheckBoxLuzActionPerformed(ActionEvent evt) {
         if(jCheckBoxHayLuz.isSelected())
             DatosMapa.addNodoSinLuz(nodo);
+        else 
+            DatosMapa.removeNodoSinLuz(nodo);
         
     }    
     public void setearNodo(Nodo nodo){

@@ -54,7 +54,7 @@ public class NodoEscalera extends Nodo {
 	public Double getCostoUsarEscalera(){
 		if(this.getUbicacion().getZ()<escalera.getUbicacion().getZ()){
 			//sube
-			return new Double(5);
+			return new Double(50);
 		}
 		//baja
 		return new Double(1);

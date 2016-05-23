@@ -80,7 +80,7 @@ public class Frame extends JFrame{
         getContentPane().add(panelDatos);
         
         //energiaGastada = 0;
-	energiaTotal = 300;
+	energiaTotal = 350;
 	progressBar = new ProgressBar(energiaTotal,energiaTotal,"Porcentaje");
 	progressBar.setBackground(Color.black);
 	progressBar.setBounds(400, 630, 539, 29);
@@ -102,7 +102,7 @@ public class Frame extends JFrame{
         imagen.setAgente(x, y,z);
         }
         catch(NullPointerException e){
-            System.err.println("Seleccionar nodo inicio");
+            System.out.println("Seleccionar nodo inicio");
         }
         
     }

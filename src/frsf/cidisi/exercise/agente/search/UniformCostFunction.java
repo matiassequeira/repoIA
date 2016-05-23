@@ -20,7 +20,7 @@ public class UniformCostFunction implements IStepCostFunction {
     	if(node.getAction().toString().equals("UsarEscalera")){
     		EstadoAgente state = ((EstadoAgente) node.getParent().getAgentState());
     		NodoEscalera nodoEscalera= (NodoEscalera) state.getPosicion();
-    		return nodoEscalera.getCostoUsarEscalera()*10;
+    		return new Double (0);
     	}
     	
     	return new Double(10);    	
